@@ -11,4 +11,29 @@
         android:label="@string/restrictions"
         tools:layout="@layout/fragment_restriction" />
 
+    <fragment
+        android:id="@+id/weekly_matches"
+        android:name="com.uowm.ekasdym.fragments.MatchesCategoriesFragment"
+        android:label="@string/weekly_matches"
+        tools:layout="@layout/list_item" />
+
+    <fragment
+        android:id="@+id/rank"
+        android:name="com.uowm.ekasdym.fragments.MatchesCategoriesGroupsFragment"
+        android:label="@string/ranking"
+        tools:layout="@layout/list_item" />
+
+    <fragment
+        android:id="@+id/rules"
+        android:name="com.uowm.ekasdym.fragments.RulesFragment"
+        android:label="@string/rules"
+        tools:layout="@layout/fragment_rules" />
+
+    <fragment
+        android:id="@+id/clarification"
+        android:name="com.uowm.ekasdym.fragments.ClarificationsFragment"
+        android:label="@string/clarifications"
+        tools:layout="@layout/fragment_clarifications" />
+
+
 </navigation>

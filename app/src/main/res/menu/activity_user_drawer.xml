@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    tools:showIn="navigation_view"
+    >
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/password"
+            android:icon="@drawable/announcements"
+            android:title="@string/announcements" />
+        <item
+            android:id="@+id/my_matches"
+            android:icon="@drawable/game"
+            android:title="@string/matches" />
+        <item
+            android:id="@+id/weekly_matches"
+            android:icon="@drawable/basketball"
+            android:title="@string/weekly_matches" />
+        <item
+            android:id="@+id/add_restriction"
             android:icon="@drawable/addrestriction"
             android:title="@string/restrictions" />
+        <item
+            android:id="@+id/my_restrictions"
+            android:icon="@drawable/restriction"
+            android:title="@string/my_restrictions" />
+        <item
+            android:id="@+id/make_announcement"
+            android:icon="@drawable/announce"
+            android:title="@string/new_announcement" />
+        <item
+            android:id="@+id/received_messages"
+            android:icon="@drawable/inb"
+            android:title="@string/incoming" />
+        <item
+            android:id="@+id/sent_messages"
+            android:icon="@drawable/send"
+            android:title="@string/outgoing" />
+
+        <item
+            android:id="@+id/rank"
+            android:icon="@drawable/rank"
+            android:title="@string/ranking" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/others">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/about"
+                android:title="@string/about" />
+            <item
+                android:id="@+id/about_ekasdym"
+                android:icon="@drawable/about_ekasdym"
+                android:title="@string/about_ekasdym_title" />
+        </menu>
     </item>
+
+    <item android:title="@string/rules">
+        <menu>
+            <item
+                android:id="@+id/rules"
+                android:icon="@drawable/rules"
+                android:title="@string/official" />
+            <item
+                android:id="@+id/clarification"
+                android:icon="@drawable/clarification"
+                android:title="@string/clarifications" />
+        </menu>
+    </item>
+
+    <item android:title="@string/personal_settings">
+        <menu>
+            <item
+                android:id="@+id/image_change"
+                android:icon="@drawable/profile_pic"
+                android:title="@string/image_upload" />
+            <item
+                android:id="@+id/password_change"
+                android:icon="@drawable/password"
+                android:title="@string/password_change" />
+
+        </menu>
+    </item>
+
+
 
 </menu>

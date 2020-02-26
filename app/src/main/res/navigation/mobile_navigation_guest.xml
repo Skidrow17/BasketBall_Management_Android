@@ -44,13 +44,13 @@
     <fragment
         android:id="@+id/weekly_matches"
         android:name="com.uowm.ekasdym.fragments.MatchesCategoriesFragment"
-        android:label="@string/clarifications"
+        android:label="@string/weekly_matches"
         tools:layout="@layout/list_item" />
 
     <fragment
         android:id="@+id/rank"
         android:name="com.uowm.ekasdym.fragments.MatchesCategoriesGroupsFragment"
-        android:label="@string/login"
+        android:label="@string/ranking"
         tools:layout="@layout/list_item" />
 
 
