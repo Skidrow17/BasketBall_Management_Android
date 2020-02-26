@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name">Ekasdym</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="material_calendar_monday">M</string>
+    <string name="material_calendar_tuesday">T</string>
+    <string name="material_calendar_wednesday">W</string>
+    <string name="material_calendar_thursday">T</string>
+    <string name="material_calendar_friday">F</string>
+    <string name="material_calendar_saturday">S</string>
+    <string name="material_calendar_sunday">S</string>
+
+    <array name="material_calendar_months_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </array>
+
+    <string name="material_calendar_today_button">Simera</string>
+    <string name="material_calendar_positive_button">OK</string>
+    <string name="material_calendar_negative_button">Akyro</string>
+
+    <string name="action_settings">Logout</string>
+    <string name="image_server">http://zafora.ece.uowm.gr/~ictest00909/EKA/</string>
+    <string name="apk_server">https://zafora.ece.uowm.gr/~ictest00909/EKASDYM/apk</string>
+    <string name="server">http://zafora.ece.uowm.gr/~ictest00909/EKA/apk/json/</string>
+    <string name="aplication_version">1.0</string>
+
+    <string name="error_code_403">Login from another device</string>
+    <string name="error_code_401">Invalid Username</string>
+    <string name="error_code_402">Invalid Password</string>
+    <string name="error_code_406">Wrong Recovery Key</string>
+    <string name="error_code_206">Request Already Been Done</string>
+    <string name="error_code_204">No Data</string>
+    <string name="error_code_202">Restrictions Are Locked</string>
+    <string name="error_code_201">Fail</string>
+    <string name="error_code_200">Success</string>
+    <string name="error_code_0">No Internet Connection</string>
+
+    <string name="others">Others</string>
+    <string name="waiting_screen">Please Wait</string>
+    <string name="logout_message">Are you sure want to logout</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="edit">Edit</string>
+    <string name="connection_fail">Connection Failure</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="new_version">New Version Available</string>
+    <string name="exit">Exit</string>
+    <string name="will_you_update">Do you want to install it</string>
+    <string name="inactive_account">Inactive Account</string>
+    <string name="correct_user">Successful Login</string>
+    <string name="matches">My Matches</string>
+    <string name="weekly_matches">All Matches</string>
+    <string name="categories">Categories</string>
+    <string name="to">To</string>
+    <string name="from">From</string>
+    <string name="score">Score</string>
+    <string name="empty_score">Empty Score</string>
+    <string name="about">About Us</string>
+    <string name="about_us">The application is part of a diploma thesis that took place at the University of Western Macedonia by the student Silvan Solla under the supervision of Professor Mr. Minas Dasigeni and Ph.D. student Mr. Dimitri Ziouzio</string>
+    <string name="announcements">Announcements</string>
+    <string name="contacts">Contacts</string>
+    <string name="delete">Delete</string>
+    <string name="incoming">Incoming</string>
+    <string name="outgoing">Outgoing</string>
+    <string name="reply">Reply</string>
+    <string name="read">Read</string>
+    <string name="unread">Unread</string>
+    <string name="new_announcement">New Announcement</string>
+    <string name="complete_the_fields">Fill The Fields</string>
+    <string name="my_restrictions">My Restrictions</string>
+    <string name="menu">Menu</string>
+    <string name="restrictions">Restrictions</string>
+    <string name="date">Date</string>
+    <string name="never">Never</string>
+    <string name="submit">Submit</string>
+    <string name="title">Title</string>
+    <string name="announcement">Announcement</string>
+    <string name="select_date">Select Date</string>
+    <string name="time_from">Time From</string>
+    <string name="time_to">Time To</string>
+    <string name="multiple_restrictions">Multiple Restrictions</string>
+    <string name="administration">Administration</string>
+    <string name="guest">Guest</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="service_stop_message">Please login again so you can receive messages and announcement notifications</string>
+    <string name="reminder">Reminder</string>
+    <string name="ranking">Ranking</string>
+    <string name="league">League 2020</string>
+    <string name="wins">Wins</string>
+    <string name="loses">Loses</string>
+    <string name="points">Points</string>
+    <string name="total_games">Matches</string>
+    <string name="name">Name</string>
+
+    <string name="p1">1st Period</string>
+    <string name="p2">2nd Period</string>
+    <string name="p3">3rd Period</string>
+    <string name="p4">4th Period</string>
+    <string name="finale">Final</string>
+
+    <string name="about_ekasdym">In 1988 by decision of the Board of Directors. of EOC, it was decided to divide EKASKEDYM into two Unions EKASKEM based in Veria and EKASEDYM based in KOZANI. In 1989 the operation of the Union was approved by the General Secretariat.
+Under the jurisdiction of the Union are the teams belonging to the Prefectures of KOZANIS, GREVENON, FLORINA and KASTORIA.</string>
+    <string name="about_ekasdym_title">About EKASDYM</string>
+    <string name = "welcome_screen">ΕΚΑΣΔΥΜ League 2019-2020</string>
+    <string name = "welcome">Welcome</string>
+
+
+    <string name="logo">Logo</string>
+    <string name="location">Location</string>
+    <string name="stadium">Stadium</string>
+    <string name="coach">Coach</string>
+    <string name="star">Star</string>
+
+    <string name="hint_search">Search by Club Name</string>
+    <string name="action_search">Search</string>
+    <string name="rules">Rules</string>
+    <string name="official">Official Rules</string>
+    <string name="clarifications">Official Clarifications</string>
+    <string name="personal_settings">Personal Info</string>
+    <string name="password_change">Password Change</string>
+    <string name="submit_request">Submit Request</string>
+    <string name="password_repeat">Password Repeat</string>
+    <string name="security_key">Security Key</string>
+    <string name="password_doesnt_match">Passwords Doesnt Match</string>
+    <string name="image_upload">Image Upload</string>
+    <string name="image_select">Select An Image From Your Inventory</string>
+    <string name="image_name">Enter Image Name</string>
+
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:background="@android:color/white"
+              android:layout_width="wrap_content"
+              android:layout_height="@dimen/row_height">
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/name"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin" />
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/points"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin" />
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/wins"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin" />
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/loses"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin" />
+
+    <TextView
+        android:layout_width="@dimen/cell_width"
+        android:id="@+id/total_games"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="center|start"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/welcome">
+
+    <fragment
+        android:id="@+id/about_ekasdym"
+        android:name="com.uowm.ekasdym.fragments.AboutEkasdymFragment"
+        android:label="@string/about_ekasdym_title"
+        tools:layout="@layout/fragment_about_ekasdym" />
+
+    <fragment
+        android:id="@+id/about_us"
+        android:name="com.uowm.ekasdym.fragments.AboutUsFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about_us" />
+
+    <fragment
+        android:id="@+id/welcome"
+        android:name="com.uowm.ekasdym.fragments.WelcomeFragment"
+        android:label="@string/welcome"
+        tools:layout="@layout/fragment_welcome" />
+
+    <fragment
+        android:id="@+id/rules"
+        android:name="com.uowm.ekasdym.fragments.RulesFragment"
+        android:label="@string/rules"
+        tools:layout="@layout/fragment_rules" />
+
+    <fragment
+    android:id="@+id/clarification"
+    android:name="com.uowm.ekasdym.fragments.ClarificationsFragment"
+    android:label="@string/clarifications"
+    tools:layout="@layout/fragment_clarifications" />
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.uowm.ekasdym.fragments.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/weekly_matches"
+        android:name="com.uowm.ekasdym.fragments.MatchesCategoriesFragment"
+        android:label="@string/clarifications"
+        tools:layout="@layout/list_item" />
+
+    <fragment
+        android:id="@+id/rank"
+        android:name="com.uowm.ekasdym.fragments.MatchesCategoriesGroupsFragment"
+        android:label="@string/login"
+        tools:layout="@layout/list_item" />
+
+
+</navigation>

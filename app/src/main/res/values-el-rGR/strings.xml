@@ -1,0 +1,149 @@
+<resources>
+    <string name="app_name">EKASDYM</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="material_calendar_monday">Δ</string>
+    <string name="material_calendar_tuesday">Τ</string>
+    <string name="material_calendar_wednesday">Τ</string>
+    <string name="material_calendar_thursday">Π</string>
+    <string name="material_calendar_friday">Π</string>
+    <string name="material_calendar_saturday">Σ</string>
+    <string name="material_calendar_sunday">Κ</string>
+
+    <array name="material_calendar_months_array">
+        <item>Ιανουάριος</item>
+        <item>Φεβρουάριος</item>
+        <item>Μάρτιος</item>
+        <item>Απρίλιος</item>
+        <item>Μάιος</item>
+        <item>Ιούνιος</item>
+        <item>Ιούλιος</item>
+        <item>Αύγουστος</item>
+        <item>Σεπτέμβριος</item>
+        <item>Οκτώβριος</item>
+        <item>Νοέμβριος</item>
+        <item>Δεκέμβριος</item>
+    </array>
+
+    <string name="material_calendar_today_button">Σήμερα</string>
+    <string name="material_calendar_positive_button">OK</string>
+    <string name="material_calendar_negative_button">Άκυρο</string>
+
+    <string name="action_settings">Αποσύνδεση</string>
+    <string name="image_server">http://zafora.ece.uowm.gr/~ictest00909/EKA/</string>
+    <string name="apk_server">https://zafora.ece.uowm.gr/~ictest00909/EKASDYM/apk</string>
+    <string name="server">http://zafora.ece.uowm.gr/~ictest00909/EKA/apk/json/</string>
+    <string name="aplication_version">1.0</string>
+
+
+    <string name="error_code_403">Login απο άλλη συσκευή</string>
+    <string name="error_code_406">Λανθασμένο κλειδί επαναφοράς</string>
+    <string name="error_code_206">Έχει γίνει ίδη αίτηση</string>
+    <string name="error_code_204">Δεν υπάρχουν Δεδομένα</string>
+    <string name="error_code_201">Αποτυχία</string>
+    <string name="error_code_202">Τα Κωλύματα Κλειδώθηκαν</string>
+    <string name="error_code_401">Μη έγκυρο όνομα χρήστη</string>
+    <string name="error_code_402">Λανθασμένος κωδικός</string>
+    <string name="error_code_200">Επιτυχία</string>
+    <string name="error_code_0">Οχι σύνδεση στο Διαδίκτυο</string>
+
+
+    <string name="others">Άλλα</string>
+    <string name="waiting_screen">Παρακαλώ Περιμένετε</string>
+    <string name="logout_message">Θέλετε σιγουρα να αποσυνδεθείτε</string>
+    <string name="yes">Ναι</string>
+    <string name="no">Οχι</string>
+    <string name="edit">Επεξεργασία</string>
+    <string name="connection_fail">Αποτυχία σύνδεσης</string>
+    <string name="no_internet_connection">Δεν υπάρχει συνδεση στο δίκτυο</string>
+    <string name="new_version">Υπάρχει νέα διαθέσιμη έκδοση</string>
+    <string name="exit">Έξοδος</string>
+    <string name="will_you_update">Θα θέλατε να την εγκαταστήσετε</string>
+    <string name="inactive_account">Μη ενεργός λογαριασμός</string>
+    <string name="correct_user">Επιτυχής σύνδεση</string>
+    <string name="matches">Οι αγώνες μου</string>
+    <string name="weekly_matches">Όλοι οι αγώνες</string>
+    <string name="categories">Κατηγορίες</string>
+    <string name="to">Πρός</string>
+    <string name="from">Από</string>
+    <string name="score">Σκόρ</string>
+    <string name="empty_score">Κενό Σκόρ</string>
+    <string name="about">Σχετικά Με Εμάς</string>
+    <string name="about_us">Η εφαρμογή υλοποιήθηκε στα πλαίσια διπλωματικής εργασία στο πανεπιστήμιο δυτικής Μακεδονίας από τον φοιτητή Σιλβάν Σόλλα υπό την επιτήρηση του καθηγητή Κ. Μηνά Δασυγένη και του υποψήφιου διδάκτορα Κ. Δημήτρη Ζιούζιο</string>
+    <string name="announcements">Ανακοινώσεις</string>
+    <string name="contacts">Επαφές</string>
+    <string name="delete">Διαγραφή</string>
+    <string name="incoming">Εισερχόμενα</string>
+    <string name="outgoing">Eξερχόμενα</string>
+    <string name="reply">Απάντηση</string>
+    <string name="read">Διαβάστηκε</string>
+    <string name="unread">Δεν Διαβάστηκε</string>
+    <string name="new_announcement">Νέα Ανακοίνωση</string>
+    <string name="complete_the_fields">Συμπλήρωστε τα πεδία</string>
+    <string name="my_restrictions">Τα κωλύματα μου</string>
+    <string name="menu">Μενού</string>
+    <string name="restrictions">Κωλύματα</string>
+    <string name="date">Ημερομηνία</string>
+    <string name="never">Ποτέ</string>
+    <string name="submit">Υποβολή</string>
+    <string name="title">Τίτλος</string>
+    <string name="announcement">Ανακοίνωση</string>
+    <string name="select_date">Επιλογή Ημερομηνίας</string>
+    <string name="time_from">Από</string>
+    <string name="time_to">Μέχρι</string>
+    <string name="multiple_restrictions">Πολλαπλή Επιλογή</string>
+    <string name="administration">Διαχείριση</string>
+    <string name="guest">Καλεσμένος</string>
+    <string name="login">Σύνδεση</string>
+    <string name="username">Όνομα Χρήστη</string>
+    <string name="password">Κωδικός</string>
+    <string name="service_stop_message">Παρακαλώ συνδεθείτε ξανά για να λαμβάνετε ειδοποιήσεις</string>
+    <string name="reminder">Υπενθύμιση</string>
+    <string name="ranking">Βαθμολογία</string>
+    <string name="league">Πρωτάθλημα 2020</string>
+    <string name="wins">Νίκες</string>
+    <string name="loses">Ήττες</string>
+    <string name="points">Πόντοι</string>
+    <string name="total_games">Αγώνες</string>
+    <string name="name">Όνομα</string>
+
+    <string name="p1">1η Περίοδος</string>
+    <string name="p2">2η Περίοδος</string>
+    <string name="p3">3η Περίοδος</string>
+    <string name="p4">4η Περίοδος</string>
+    <string name="finale">Τελικό</string>
+
+    <string name="about_ekasdym">Το 1988 με απόφαση του Δ.Σ. της Ε.Ο.Κ., αποφασίσθηκε ο διαχωρισμός της ΕΚΑΣΚΕΔΥΜ σε δύο Ενώσεις την ΕΚΑΣΚΕΜ με έδρα την Βέροια και την ΕΚΑΣΔΥΜ με έδρα την ΚΟΖΑΝΗ. Το 1989 εγκρίθηκε η λειτουργία της Ενωσης απο την Γ.Γ.Α.
+Στη δικαιοδοσία της Ενωσης είναι οι ομάδες που ανήκουν στους Νομούς ΚΟΖΑΝΗΣ , ΓΡΕΒΕΝΩΝ , ΦΛΩΡΙΝΑΣ και ΚΑΣΤΟΡΙΑΣ.</string>
+    <string name="about_ekasdym_title">Σχετικά με την ΕΚΑΣΔΥΜ</string>
+    <string name = "welcome_screen">Πρωτάθλημα ΕΚΑΣΔΥΜ 2019-2020</string>
+    <string name = "welcome">Kαλώς Oρίσατε</string>
+
+
+    <string name="logo">Logo</string>
+    <string name="location">Location</string>
+    <string name="stadium">Stadium</string>
+    <string name="coach">Coach</string>
+    <string name="star">Star</string>
+
+    <string name="hint_search">Search by Club Name</string>
+    <string name="action_search">Search</string>
+    <string name="rules">Κανονισμοί</string>
+    <string name="official">Επίσημοι Κανονισμοί</string>
+    <string name="clarifications">Επίσημες Διευκρινίσεις</string>
+    <string name="personal_settings">Προσωπικά στοιχεία</string>
+    <string name="password_change">Αλλαγή Κωδικού</string>
+    <string name="submit_request">Υποβολή Αιτήματος</string>
+    <string name="password_repeat">Επανάληψη Κωδικού</string>
+    <string name="security_key">Κλειδί Aσφαλείας</string>
+    <string name="password_doesnt_match">Οι κωδικοί δεν ταιριάζουν</string>
+    <string name="image_upload">Aνέβασμα φωτογραφίας</string>
+    <string name="image_select">Επιλέξτε μια εικόνα</string>
+    <string name="image_name">Εισάγετε όνομα εικόνας</string>
+
+</resources>
