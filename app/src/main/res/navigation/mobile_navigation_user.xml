@@ -47,5 +47,11 @@
         android:label="@string/about"
         tools:layout="@layout/fragment_about_ekasdym" />
 
+    <fragment
+        android:id="@+id/announcements"
+        android:name="com.uowm.ekasdym.fragments.AnnouncementsFragment"
+        android:label="@string/announcement"
+        tools:layout="@layout/announcement_list" />
+
 
 </navigation>

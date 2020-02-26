@@ -7,7 +7,7 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/password"
+            android:id="@+id/announcements"
             android:icon="@drawable/announcements"
             android:title="@string/announcements" />
         <item
