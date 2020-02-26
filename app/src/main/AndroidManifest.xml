@@ -62,6 +62,19 @@
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 
+        <activity
+            android:name=".activities.MessageActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".activities.MessageShowActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait"></activity>
+
+
+
+
     </application>
 
 </manifest>

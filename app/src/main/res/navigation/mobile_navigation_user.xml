@@ -53,5 +53,24 @@
         android:label="@string/announcement"
         tools:layout="@layout/announcement_list" />
 
+    <fragment
+        android:id="@+id/received_messages"
+        android:name="com.uowm.ekasdym.fragments.IncommingMessagesFragment"
+        android:label="@string/incoming"
+        tools:layout="@layout/message_receive_list" />
+
+    <fragment
+        android:id="@+id/sent_messages"
+        android:name="com.uowm.ekasdym.fragments.OutgoingMessagesFragment"
+        android:label="@string/outgoing"
+        tools:layout="@layout/message_sent_list" />
+
+    <fragment
+        android:id="@+id/my_restrictions"
+        android:name="com.uowm.ekasdym.fragments.MyRestrictionsFragment"
+        android:label="@string/my_restrictions"
+        tools:layout="@layout/my_restrictions" />
+
+
 
 </navigation>

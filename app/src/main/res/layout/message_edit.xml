@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="253dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="178dp"
+        android:background="@drawable/button_border"
+        android:gravity="top|left"
+        android:textColor="@color/white"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="6"
+        android:textAlignment="center"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/sent"
+        android:layout_width="253dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-178dp"
+        android:background="@drawable/button_border"
+        android:text="@string/submit" />
+
+</RelativeLayout>

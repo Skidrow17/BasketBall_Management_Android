@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:cacheColorHint="#00000000"
+    android:orientation="horizontal"
+
+    android:padding="5dip"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Απο"
+        android:textColor="#040404"
+        android:textSize="@dimen/text_list_size"
+        android:textStyle="bold"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="15dp" />
+
+    <TextView
+        android:id="@+id/to"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Μεχρι"
+        android:textColor="#040404"
+        android:textSize="@dimen/text_list_size"
+        android:textStyle="bold"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="12dp" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Ημερομηνία"
+        android:textColor="#040404"
+        android:textSize="@dimen/text_list_size"
+        android:textStyle="bold"
+        android:typeface="sans"
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="17dp" />
+
+    <!-- Artist Name -->
+
+
+</LinearLayout>
