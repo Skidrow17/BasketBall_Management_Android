@@ -163,15 +163,15 @@ public class LoginFragment extends Fragment {
 
                     if (profile.equals("Admin")) {
                         Intent i = new Intent(getActivity(), UserActivity.class);
-                        i.putExtra("fullname", name + " " + surname);
+                        i.putExtra("name", name + " " + surname);
                         i.putExtra("profile_pic", getString(R.string.image_server) + profile_pic);
-                        i.putExtra("proffesion", profile);
+                        i.putExtra("profile", profile);
                         startActivity(i);
                     } else {
                         Intent i = new Intent(getActivity(), UserActivity.class);
-                        i.putExtra("fullname", name + " " + surname);
+                        i.putExtra("name", name + " " + surname);
                         i.putExtra("profile_pic", getString(R.string.image_server) + profile_pic);
-                        i.putExtra("proffesion", profile);
+                        i.putExtra("profile", profile);
                         startActivity(i);
                     }
                 }
