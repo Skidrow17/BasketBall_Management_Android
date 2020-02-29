@@ -108,8 +108,7 @@ public class AnnouncementsFragment extends ListFragment {
         @Override
         protected void onPostExecute(String json) {
 
-
-
+            announcements.clear();
             final Handler handler = new Handler();
             handler.postDelayed(() -> pDialog.dismiss(), 500);
 
@@ -253,7 +252,6 @@ public class AnnouncementsFragment extends ListFragment {
 
         @Override
         protected void onPostExecute(String json) {
-
 
             final Handler handler = new Handler();
             handler.postDelayed(() -> pDialog.dismiss(), 500);

@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/mobile_navigation_user"
     app:startDestination="@+id/announcements">
 
     <fragment
@@ -100,7 +100,5 @@
         android:name="com.uowm.ekasdym.fragments.ProfilePictureChangeFragment"
         android:label="@string/image_upload"
         tools:layout="@layout/password_image_change" />
-
-
 
 </navigation>

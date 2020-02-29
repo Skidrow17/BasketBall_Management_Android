@@ -238,7 +238,7 @@ public class MyRestrictionsFragment extends ListFragment {
         @Override
         protected void onPostExecute(String json) {
 
-
+            restrictions.clear();
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override

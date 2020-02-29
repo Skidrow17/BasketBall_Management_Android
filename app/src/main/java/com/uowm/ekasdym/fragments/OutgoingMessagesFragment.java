@@ -250,7 +250,7 @@ public class OutgoingMessagesFragment extends ListFragment
         @Override
         protected void onPostExecute(String json) {
 
-
+            messages.clear();
             final Handler handler = new Handler();
             handler.postDelayed(() -> pDialog.dismiss(), 500);
 

@@ -9,12 +9,14 @@
         android:orderInCategory="100"
         android:title="@string/action_search"
         android:visible="false"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
 
 </menu>
