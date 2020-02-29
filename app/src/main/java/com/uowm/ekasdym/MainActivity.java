@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             username_filtered = username.replaceAll(" ", "%20");
             password_filtered = password.replaceAll(" ", "%20");
             device_name_filtered = device_name.replaceAll(" ", "%20");
-            url = getString(R.string.server) + "login.php?username=" + username_filtered + "&password=" + password_filtered + "&device_name=" + device_name_filtered+"&safe_key="+safety+"&id="+id;
+            url = getString(R.string.server) + "login.php?username=" + username_filtered + "&password=" + password_filtered + "&device_name=" + device_name_filtered+"&safe_key="+safety+"&id="+id+"&mobile_token="+FirebaseInstanceId.getInstance().getToken();
             JSONParser jParser = new JSONParser();
             String st = jParser.getJSONFromUrl(url);
             return st;

@@ -46,8 +46,8 @@ public class MakeAnnouncementFragment extends Fragment {
         getActivity();
 
         submit = getActivity().findViewById(R.id.sent);
-        title = getActivity().findViewById(R.id.security_key);
-        text = getActivity().findViewById(R.id.password);
+        title = (EditText) getActivity().findViewById(R.id.security_key);
+        text = (EditText) getActivity().findViewById(R.id.password);
 
 
 
@@ -106,13 +106,8 @@ public class MakeAnnouncementFragment extends Fragment {
         protected void onPostExecute(String json) {
             pDialog.dismiss();
 
-
-
             int error_code = 0;
-
             JSONObject jobj;
-
-
             try {
                 jobj = new JSONObject(json);
                 JSONObject jobj4 = jobj.getJSONObject("ERROR");
