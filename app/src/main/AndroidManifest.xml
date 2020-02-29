@@ -43,37 +43,37 @@
         </activity>
 
         <activity
-            android:name=".activities.AllMatches"
+            android:name=".activities.AllMatchesActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.AllRanking"
+            android:name=".activities.AllRankingActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.AnnouncementShow"
+            android:name=".activities.AnnouncementShowActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.EditAnnouncement"
+            android:name=".activities.EditAnnouncementActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.MessageActivity"
+            android:name=".activities.MessageActivityActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.MessageShowActivity"
+            android:name=".activities.MessageShowActivityActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.ScoreEditActivity"
+            android:name=".activities.ScoreEditActivityActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 

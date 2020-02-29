@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.uowm.ekasdym.R;
 
 
-public class AnnouncementShow extends AppCompatActivity {
+public class AnnouncementShowActivity extends AppCompatActivity {
 
     TextView text;
 

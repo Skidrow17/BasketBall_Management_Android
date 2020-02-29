@@ -33,7 +33,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllRanking extends AppCompatActivity
+public class AllRankingActivity extends AppCompatActivity
 {
 
     int scrollX = 0;
@@ -143,12 +143,12 @@ public class AllRanking extends AppCompatActivity
 
     private void setUpRecyclerView()
     {
-        clubAdapter = new ClubAdapter(AllRanking.this, clubList);
+        clubAdapter = new ClubAdapter(AllRankingActivity.this, clubList);
         FixedGridLayoutManager manager = new FixedGridLayoutManager();
         manager.setTotalColumnCount(1);
         rvClub.setLayoutManager(manager);
         rvClub.setAdapter(clubAdapter);
-        rvClub.addItemDecoration(new DividerItemDecoration(AllRanking.this, DividerItemDecoration.VERTICAL));
+        rvClub.addItemDecoration(new DividerItemDecoration(AllRankingActivity.this, DividerItemDecoration.VERTICAL));
     }
 
     public class JSONParse extends AsyncTask< String, String, String > {
@@ -157,7 +157,7 @@ public class AllRanking extends AppCompatActivity
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(AllRanking.this);
+            pDialog = new ProgressDialog(AllRankingActivity.this);
             pDialog.setMessage(getString(R.string.waiting_screen));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -248,16 +248,16 @@ public class AllRanking extends AppCompatActivity
                 });
 
             } else if (error_code == 403) {
-                Toast toast = Toast.makeText(AllRanking.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(AllRankingActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
                 toast.show();
-                AllRanking.this.finishAffinity();
+                AllRankingActivity.this.finishAffinity();
             } else if (error_code == 204) {
-                Toast toast = Toast.makeText(AllRanking.this, getString(R.string.error_code_204), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(AllRankingActivity.this, getString(R.string.error_code_204), Toast.LENGTH_LONG);
                 toast.show();
             } else {
-                Toast toast = Toast.makeText(AllRanking.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(AllRankingActivity.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
                 toast.show();
-                AllRanking.this.finishAffinity();
+                AllRankingActivity.this.finishAffinity();
             }
         }
     }

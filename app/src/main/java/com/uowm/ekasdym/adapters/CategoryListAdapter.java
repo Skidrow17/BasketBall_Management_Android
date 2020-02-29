@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.uowm.ekasdym.R;
-import com.uowm.ekasdym.activities.AllMatches;
+import com.uowm.ekasdym.activities.AllMatchesActivity;
 import com.uowm.ekasdym.model.TeamCategory;
 
 import java.util.ArrayList;
@@ -63,7 +63,7 @@ public class CategoryListAdapter extends BaseAdapter {
         mainViewholder = (ViewHolder) convertView.getTag();
 
         mainViewholder.category.setOnClickListener(v -> {
-            Intent intent =new Intent(context, AllMatches.class);
+            Intent intent =new Intent(context, AllMatchesActivity.class);
             intent.putExtra("id",((TeamCategory) listData.get(position)).getId());
             intent.putExtra("title",((TeamCategory) listData.get(position)).getName());
             context.startActivity(intent);

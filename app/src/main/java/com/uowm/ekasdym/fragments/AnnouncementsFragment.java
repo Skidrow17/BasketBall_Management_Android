@@ -20,8 +20,8 @@ import androidx.fragment.app.ListFragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.uowm.ekasdym.R;
-import com.uowm.ekasdym.activities.AnnouncementShow;
-import com.uowm.ekasdym.activities.EditAnnouncement;
+import com.uowm.ekasdym.activities.AnnouncementShowActivity;
+import com.uowm.ekasdym.activities.EditAnnouncementActivity;
 import com.uowm.ekasdym.adapters.AnnouncementListAdapter;
 import com.uowm.ekasdym.database.DatabaseHelper;
 import com.uowm.ekasdym.model.Announcement;
@@ -178,7 +178,7 @@ public class AnnouncementsFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, final int position, long id) {
 
-        Intent intent = new Intent(getActivity(), AnnouncementShow.class);
+        Intent intent = new Intent(getActivity(), AnnouncementShowActivity.class);
         intent.putExtra("title", announcements.get(position).getTitle());
         intent.putExtra("text", announcements.get(position).getText());
         startActivity(intent);
@@ -201,7 +201,7 @@ public class AnnouncementsFragment extends ListFragment {
             global_id = announcements.get(info.position).getID();
             new Delete_Announcement().execute();
         } else {
-            Intent intent = new Intent(getActivity(), EditAnnouncement.class);
+            Intent intent = new Intent(getActivity(), EditAnnouncementActivity.class);
             intent.putExtra("id", announcements.get(info.position).getID());
             intent.putExtra("title", announcements.get(info.position).getTitle());
             intent.putExtra("text", announcements.get(info.position).getText());

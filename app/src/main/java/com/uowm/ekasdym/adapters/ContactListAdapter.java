@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.uowm.ekasdym.R;
-import com.uowm.ekasdym.activities.MessageActivity;
+import com.uowm.ekasdym.activities.MessageActivityActivity;
 import com.uowm.ekasdym.model.Contact;
 
 import java.net.MalformedURLException;
@@ -89,7 +89,7 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
         mainViewholder.message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(context, MessageActivity.class);
+                Intent intent =new Intent(context, MessageActivityActivity.class);
                 intent.putExtra("id",((Contact) filteredContactList.get(position)).getId());
                 intent.putExtra("name_surname",((Contact) filteredContactList.get(position)).getName()+" "+((Contact) filteredContactList.get(position)).getSurname());
                 context.startActivity(intent);

@@ -25,7 +25,7 @@ import com.uowm.ekasdym.utilities.JSONParser;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ScoreEditActivity extends AppCompatActivity {
+public class ScoreEditActivityActivity extends AppCompatActivity {
 
 
     private TextView view1, view2;
@@ -182,7 +182,7 @@ public class ScoreEditActivity extends AppCompatActivity {
                 if (!score1.getText().toString().equals("") && !score2.getText().toString().equals(""))
                     new Sent_Data().execute();
                 else {
-                    Toast toast = Toast.makeText(ScoreEditActivity.this, getString(R.string.empty_score), Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(ScoreEditActivityActivity.this, getString(R.string.empty_score), Toast.LENGTH_LONG);
                     toast.show();
                 }
             }
@@ -197,7 +197,7 @@ public class ScoreEditActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(ScoreEditActivity.this);
+            pDialog = new ProgressDialog(ScoreEditActivityActivity.this);
             pDialog.setMessage(getString(R.string.waiting_screen));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -209,7 +209,7 @@ public class ScoreEditActivity extends AppCompatActivity {
         protected String doInBackground(String...args) {
 
 
-            DatabaseHelper myDb = new DatabaseHelper(ScoreEditActivity.this);
+            DatabaseHelper myDb = new DatabaseHelper(ScoreEditActivityActivity.this);
             Cursor res = myDb.getAllData();
             String user_id = "";
             String safe_key = "";
@@ -252,19 +252,19 @@ public class ScoreEditActivity extends AppCompatActivity {
             }
 
             if (error_code == 200) {
-                Toast toast = Toast.makeText(ScoreEditActivity.this, getString(R.string.error_code_200), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ScoreEditActivityActivity.this, getString(R.string.error_code_200), Toast.LENGTH_LONG);
                 toast.show();
             } else if (error_code == 201) {
-                Toast toast = Toast.makeText(ScoreEditActivity.this, getString(R.string.error_code_201), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ScoreEditActivityActivity.this, getString(R.string.error_code_201), Toast.LENGTH_LONG);
                 toast.show();
             } else if (error_code == 403) {
-                Toast toast = Toast.makeText(ScoreEditActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ScoreEditActivityActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
                 toast.show();
-                ScoreEditActivity.this.finishAffinity();
+                ScoreEditActivityActivity.this.finishAffinity();
             } else {
-                Toast toast = Toast.makeText(ScoreEditActivity.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ScoreEditActivityActivity.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
                 toast.show();
-                ScoreEditActivity.this.finishAffinity();
+                ScoreEditActivityActivity.this.finishAffinity();
 
             }
         }

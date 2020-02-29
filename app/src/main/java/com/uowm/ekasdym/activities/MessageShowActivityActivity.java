@@ -20,7 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class MessageShowActivity extends AppCompatActivity {
+public class MessageShowActivityActivity extends AppCompatActivity {
 
 
     TextView text;
@@ -71,7 +71,7 @@ public class MessageShowActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String...args) {
 
-            DatabaseHelper myDb = new DatabaseHelper(MessageShowActivity.this);
+            DatabaseHelper myDb = new DatabaseHelper(MessageShowActivityActivity.this);
             Cursor res = myDb.getAllData();
             String user_id = "";
             String safe_key = "";
@@ -106,7 +106,7 @@ public class MessageShowActivity extends AppCompatActivity {
             }
 
             if (error_code == 403) {
-                Toast toast = Toast.makeText(MessageShowActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(MessageShowActivityActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
                 toast.show();
                 finishAffinity();
             }

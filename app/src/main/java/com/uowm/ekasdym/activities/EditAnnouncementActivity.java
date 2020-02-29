@@ -25,13 +25,16 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+public class EditAnnouncementActivity extends AppCompatActivity {
 
-public class MessageActivity extends AppCompatActivity {
 
     private String url = "";
     private int id;
+    private String title_filtered;
     private String text_message;
+
     EditText text;
+    EditText title;
     Button bt;
     DateFormat formatter;
 
@@ -41,31 +44,42 @@ public class MessageActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.message_edit);
+        setContentView(R.layout.announcement_edit);
+
 
         formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+
+
         text = findViewById(R.id.password);
+        title = findViewById(R.id.security_key);
         bt = findViewById(R.id.sent);
+
+
         Intent intent = getIntent();
         id = intent.getIntExtra("id", 0);
-        String name_surname = intent.getStringExtra("name_surname");
+        String title1 = intent.getStringExtra("title");
+        String text1 = intent.getStringExtra("text");
+
+        title.setText(title1);
+        text.setText(text1);
+
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'>"+getString(R.string.to)+" : " + name_surname + "</font>"));
-
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'>"+getString(R.string.edit)+"</font>"));
 
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String temp = "" + text.getText();
-                text_message = temp.replaceAll(" ", "%20");
-                new JSONParse().execute();
+                text_message = text.getText().toString().replaceAll(" ", "%20");
+                title_filtered = title.getText().toString().replaceAll(" ", "%20");
+                new EditAnnouncementActivity.JSONParse().execute();
             }
         });
+
 
     }
 
@@ -82,7 +96,7 @@ public class MessageActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(MessageActivity.this);
+            pDialog = new ProgressDialog(EditAnnouncementActivity.this);
             pDialog.setMessage(getString(R.string.waiting_screen));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -93,7 +107,7 @@ public class MessageActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String...args) {
 
-            DatabaseHelper myDb = new DatabaseHelper(MessageActivity.this);
+            DatabaseHelper myDb = new DatabaseHelper(EditAnnouncementActivity.this);
             Cursor res = myDb.getAllData();
             String user_id = "";
             String safe_key = "";
@@ -105,9 +119,10 @@ public class MessageActivity extends AppCompatActivity {
                 }
             }
             res.close();
+            url = getString(R.string.server) + "editAnnouncement.php?id=" + user_id + "&safe_key=" + safe_key + "&announcement_id=" + id + "&text=" + text_message + "&title=" + title_filtered;
 
-            url = getString(R.string.server) + "sentMessage.php?sender_id=" + user_id + "&receiver_id=" + id + "&text_message=" + text_message + "&safe_key=" + safe_key;
             JSONParser jParser = new JSONParser();
+
             String st = jParser.getJSONFromUrl(url);
 
             return st;
@@ -116,7 +131,7 @@ public class MessageActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String json) {
-            text.setText("");
+
             final Handler handler = new Handler();
             handler.postDelayed(() -> pDialog.dismiss(), 500);
 
@@ -134,19 +149,22 @@ public class MessageActivity extends AppCompatActivity {
             }
 
             if (error_code == 200) {
-                Toast toast = Toast.makeText(MessageActivity.this, getString(R.string.error_code_200), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(EditAnnouncementActivity.this, getString(R.string.error_code_200), Toast.LENGTH_LONG);
                 toast.show();
             } else if (error_code == 403) {
-                Toast toast = Toast.makeText(MessageActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(EditAnnouncementActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
                 toast.show();
-                MessageActivity.this.finishAffinity();
+                EditAnnouncementActivity.this.finishAffinity();
+            } else if (error_code == 204) {
+                Toast toast = Toast.makeText(EditAnnouncementActivity.this, getString(R.string.error_code_204), Toast.LENGTH_LONG);
+                toast.show();
             } else if (error_code == 201) {
-                Toast toast = Toast.makeText(MessageActivity.this, getString(R.string.error_code_201), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(EditAnnouncementActivity.this, getString(R.string.error_code_201), Toast.LENGTH_LONG);
                 toast.show();
             } else {
-                Toast toast = Toast.makeText(MessageActivity.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(EditAnnouncementActivity.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
                 toast.show();
-                MessageActivity.this.finishAffinity();
+                EditAnnouncementActivity.this.finishAffinity();
             }
         }
     }

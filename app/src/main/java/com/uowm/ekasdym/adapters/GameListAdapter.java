@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.uowm.ekasdym.R;
-import com.uowm.ekasdym.activities.ScoreEditActivity;
+import com.uowm.ekasdym.activities.ScoreEditActivityActivity;
 import com.uowm.ekasdym.model.Match;
 
 import java.util.ArrayList;
@@ -84,7 +84,7 @@ public class GameListAdapter extends BaseAdapter {
 
 
         mainViewholder.score.setOnClickListener(v -> {
-            Intent i = new Intent(context, ScoreEditActivity.class);
+            Intent i = new Intent(context, ScoreEditActivityActivity.class);
             i.putExtra("team1", ((Match) listData.get(position)).getTeam1());
             i.putExtra("team2", ((Match) listData.get(position)).getTeam2());
             i.putExtra("team_score_1", ((Match) listData.get(position)).getTeam1_score());

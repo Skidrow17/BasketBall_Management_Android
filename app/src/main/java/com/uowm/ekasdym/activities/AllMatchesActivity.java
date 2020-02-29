@@ -27,7 +27,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class AllMatches extends AppCompatActivity {
+public class AllMatchesActivity extends AppCompatActivity {
 
     private String url = "",name = "";
     private int id;
@@ -66,7 +66,7 @@ public class AllMatches extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(AllMatches.this);
+            pDialog = new ProgressDialog(AllMatchesActivity.this);
             pDialog.setMessage(getString(R.string.waiting_screen));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
@@ -137,23 +137,23 @@ public class AllMatches extends AppCompatActivity {
                 }
 
                 final ListView listView = (ListView) findViewById(android.R.id.list);
-                listView.setAdapter(new AllMatchesListAdapter(AllMatches.this, matches));
+                listView.setAdapter(new AllMatchesListAdapter(AllMatchesActivity.this, matches));
 
             } else if (error_code == 403) {
-                Toast toast = Toast.makeText(AllMatches.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(AllMatchesActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
                 toast.show();
-                AllMatches.this.finishAffinity();
+                AllMatchesActivity.this.finishAffinity();
             } else if (error_code == 204) {
-                Toast toast = Toast.makeText(AllMatches.this, getString(R.string.error_code_204), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(AllMatchesActivity.this, getString(R.string.error_code_204), Toast.LENGTH_LONG);
                 toast.show();
             } else {
-                Toast toast = Toast.makeText(AllMatches.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(AllMatchesActivity.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
                 toast.show();
-                AllMatches.this.finishAffinity();
+                AllMatchesActivity.this.finishAffinity();
             }
 
             final ListView listView = (ListView) findViewById(android.R.id.list);
-            listView.setAdapter(new AllMatchesListAdapter(AllMatches.this, matches));
+            listView.setAdapter(new AllMatchesListAdapter(AllMatchesActivity.this, matches));
 
         }
     }

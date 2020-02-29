@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.uowm.ekasdym.R;
-import com.uowm.ekasdym.activities.AllRanking;
+import com.uowm.ekasdym.activities.AllRankingActivity;
 import com.uowm.ekasdym.model.TeamCategoryGroup;
 
 import java.util.ArrayList;
@@ -65,7 +65,7 @@ public class CategoryGroupListAdapter extends BaseAdapter {
         mainViewholder = (ViewHolder) convertView.getTag();
 
         mainViewholder.category.setOnClickListener(v -> {
-            Intent intent = new Intent(context, AllRanking.class);
+            Intent intent = new Intent(context, AllRankingActivity.class);
             intent.putExtra("categoryId",((TeamCategoryGroup) listData.get(position)).getCategoryId());
             intent.putExtra("groupId",((TeamCategoryGroup) listData.get(position)).getGroupId());
 

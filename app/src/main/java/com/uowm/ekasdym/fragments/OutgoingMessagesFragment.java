@@ -21,7 +21,7 @@ import androidx.fragment.app.ListFragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.uowm.ekasdym.R;
-import com.uowm.ekasdym.activities.MessageShowActivity;
+import com.uowm.ekasdym.activities.MessageShowActivityActivity;
 import com.uowm.ekasdym.adapters.MessageReceiveAdapter;
 import com.uowm.ekasdym.adapters.MessageSentAdapter;
 import com.uowm.ekasdym.database.DatabaseHelper;
@@ -182,7 +182,7 @@ public class OutgoingMessagesFragment extends ListFragment
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
 
-        Intent intent =new Intent(getActivity(), MessageShowActivity.class);
+        Intent intent =new Intent(getActivity(), MessageShowActivityActivity.class);
         intent.putExtra("name_surname",messages.get(position).getName()+" "+messages.get(position).getSurname());
         intent.putExtra("message",messages.get(position).getMessage());
         intent.putExtra("class_name","OutgoingMessagesFragment");

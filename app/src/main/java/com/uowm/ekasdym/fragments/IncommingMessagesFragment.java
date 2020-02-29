@@ -20,8 +20,8 @@ import androidx.fragment.app.ListFragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.uowm.ekasdym.R;
-import com.uowm.ekasdym.activities.MessageActivity;
-import com.uowm.ekasdym.activities.MessageShowActivity;
+import com.uowm.ekasdym.activities.MessageActivityActivity;
+import com.uowm.ekasdym.activities.MessageShowActivityActivity;
 import com.uowm.ekasdym.adapters.MessageReceiveAdapter;
 import com.uowm.ekasdym.database.DatabaseHelper;
 import com.uowm.ekasdym.model.Message;
@@ -177,7 +177,7 @@ public class IncommingMessagesFragment extends ListFragment {
 
         global_position = position;
 
-        Intent intent = new Intent(getActivity(), MessageShowActivity.class);
+        Intent intent = new Intent(getActivity(), MessageShowActivityActivity.class);
         intent.putExtra("name_surname", messages.get(position).getName() + " " + messages.get(position).getSurname());
         intent.putExtra("message", messages.get(position).getMessage());
         intent.putExtra("id", messages.get(position).getId());
@@ -208,7 +208,7 @@ public class IncommingMessagesFragment extends ListFragment {
             global_id = messages.get(info.position).getId();
             new Delete_Message().execute();
         } else {
-            Intent intent = new Intent(getActivity(), MessageActivity.class);
+            Intent intent = new Intent(getActivity(), MessageActivityActivity.class);
             intent.putExtra("id", messages.get(info.position).getSender_id());
             intent.putExtra("name_surname", messages.get(info.position).getName() + " " + messages.get(info.position).getSurname());
             startActivity(intent);
