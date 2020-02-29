@@ -6,9 +6,12 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.uowm.ekasdym.database.DatabaseHelper;
 import com.uowm.ekasdym.utilities.JSONParser;
 import org.json.JSONException;
@@ -64,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                     new Login().execute();
             }
         }, 2000);
+
+
     }
 
 
@@ -153,15 +158,15 @@ public class MainActivity extends AppCompatActivity {
 
                     if (profile.equals("Admin")) {
                         Intent i = new Intent(MainActivity.this, UserActivity.class);
-                        i.putExtra("fullname", name + " " + surname);
+                        i.putExtra("name", name + " " + surname);
                         i.putExtra("profile_pic", getString(R.string.image_server) + profile_pic);
-                        i.putExtra("proffesion", profile);
+                        i.putExtra("profile", profile);
                         startActivity(i);
                     } else {
                         Intent i = new Intent(MainActivity.this, UserActivity.class);
-                        i.putExtra("fullname", name + " " + surname);
+                        i.putExtra("name", name + " " + surname);
                         i.putExtra("profile_pic", getString(R.string.image_server) + profile_pic);
-                        i.putExtra("proffesion", profile);
+                        i.putExtra("profile", profile);
                         startActivity(i);
                     }
                 }

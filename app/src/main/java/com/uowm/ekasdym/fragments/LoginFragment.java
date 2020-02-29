@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.uowm.ekasdym.R;
 import com.uowm.ekasdym.UserActivity;
 import com.uowm.ekasdym.database.DatabaseHelper;
@@ -91,8 +92,7 @@ public class LoginFragment extends Fragment {
         @Override
         protected String doInBackground(String... args) {
 
-            String url = getString(R.string.server) + "login.php?username=" + username_filtered + "&password=" + password_filtered + "&device_name=" + device_name_filtered;
-
+            String url = getString(R.string.server) + "login.php?username=" + username_filtered + "&password=" + password_filtered + "&device_name=" + device_name_filtered+"&mobile_token="+ FirebaseInstanceId.getInstance().getToken();
             JSONParser jParser = new JSONParser();
             String st = jParser.getJSONFromUrl(url);
 
