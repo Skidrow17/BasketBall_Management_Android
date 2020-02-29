@@ -72,6 +72,11 @@
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 
+        <activity
+            android:name=".activities.ScoreEditActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="portrait"></activity>
+
 
 
 

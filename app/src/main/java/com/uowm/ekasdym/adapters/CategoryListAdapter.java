@@ -62,14 +62,11 @@ public class CategoryListAdapter extends BaseAdapter {
 
         mainViewholder = (ViewHolder) convertView.getTag();
 
-        mainViewholder.category.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(context, AllMatches.class);
-                intent.putExtra("id",((TeamCategory) listData.get(position)).getId());
-                intent.putExtra("title",((TeamCategory) listData.get(position)).getName());
-                context.startActivity(intent);
-            }
+        mainViewholder.category.setOnClickListener(v -> {
+            Intent intent =new Intent(context, AllMatches.class);
+            intent.putExtra("id",((TeamCategory) listData.get(position)).getId());
+            intent.putExtra("title",((TeamCategory) listData.get(position)).getName());
+            context.startActivity(intent);
         });
 
         return convertView;

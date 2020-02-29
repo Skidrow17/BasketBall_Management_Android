@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/rules">
+    app:startDestination="@+id/announcements">
 
     <fragment
         android:id="@+id/add_restriction"
@@ -70,6 +70,36 @@
         android:name="com.uowm.ekasdym.fragments.MyRestrictionsFragment"
         android:label="@string/my_restrictions"
         tools:layout="@layout/my_restrictions" />
+
+    <fragment
+        android:id="@+id/make_announcement"
+        android:name="com.uowm.ekasdym.fragments.MakeAnnouncementFragment"
+        android:label="@string/new_announcement"
+        tools:layout="@layout/announcement_edit" />
+
+    <fragment
+        android:id="@+id/my_matches"
+        android:name="com.uowm.ekasdym.fragments.MatchFragment"
+        android:label="@string/matches"
+        tools:layout="@layout/list_item" />
+
+    <fragment
+        android:id="@+id/fab"
+        android:name="com.uowm.ekasdym.fragments.ContactFragment"
+        android:label="@string/contacts"
+        tools:layout="@layout/contact_list" />
+
+    <fragment
+        android:id="@+id/password_change"
+        android:name="com.uowm.ekasdym.fragments.PasswordChangeFragment"
+        android:label="@string/password_change"
+        tools:layout="@layout/image_upload" />
+
+    <fragment
+        android:id="@+id/image_change"
+        android:name="com.uowm.ekasdym.fragments.ProfilePictureChangeFragment"
+        android:label="@string/image_upload"
+        tools:layout="@layout/password_image_change" />
 
 
 
