@@ -93,12 +93,12 @@
         android:id="@+id/password_change"
         android:name="com.uowm.ekasdym.fragments.PasswordChangeFragment"
         android:label="@string/password_change"
-        tools:layout="@layout/image_upload" />
+        tools:layout="@layout/password_change" />
 
     <fragment
         android:id="@+id/image_change"
         android:name="com.uowm.ekasdym.fragments.ProfilePictureChangeFragment"
         android:label="@string/image_upload"
-        tools:layout="@layout/password_image_change" />
+        tools:layout="@layout/image_upload" />
 
 </navigation>

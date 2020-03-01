@@ -9,12 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.uowm.ekasdym.R;
 import com.uowm.ekasdym.database.DatabaseHelper;
@@ -23,12 +21,12 @@ import com.uowm.ekasdym.utilities.JSONParser;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 public class MakeAnnouncementFragment extends Fragment {
 
     private String url;
     private Button submit;
-    private EditText title, text;
-    private String textFilter, titleFilter;
+    private String textFilter = "", titleFilter = "";
 
     @Nullable
     @Override
@@ -36,20 +34,19 @@ public class MakeAnnouncementFragment extends Fragment {
         return inflater.inflate(R.layout.announcement_edit, container, false);
     }
 
-
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        textFilter = "";
+        titleFilter = "";
 
         FloatingActionButton fab = getActivity().findViewById(R.id.fab);
         fab.setVisibility(View.VISIBLE);
         getActivity();
 
         submit = getActivity().findViewById(R.id.sent);
-        title = (EditText) getActivity().findViewById(R.id.security_key);
-        text = (EditText) getActivity().findViewById(R.id.password);
-
-
+        TextView title = getActivity().findViewById(R.id.title);
+        TextView text = getActivity().findViewById(R.id.text);
 
         submit.setOnClickListener(v -> {
             if (text.getText().toString().equals("") && title.getText().toString().equals("")) {
@@ -58,6 +55,7 @@ public class MakeAnnouncementFragment extends Fragment {
             } else {
                 textFilter = text.getText().toString().replaceAll(" ", "%20");
                 titleFilter = title.getText().toString().replaceAll(" ", "%20");
+
                 new Sent_Announcement().execute();
             }
         });

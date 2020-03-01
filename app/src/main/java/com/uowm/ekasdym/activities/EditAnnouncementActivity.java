@@ -51,8 +51,8 @@ public class EditAnnouncementActivity extends AppCompatActivity {
 
 
 
-        text = findViewById(R.id.password);
-        title = findViewById(R.id.security_key);
+        text = findViewById(R.id.text);
+        title = findViewById(R.id.title);
         bt = findViewById(R.id.sent);
 
 

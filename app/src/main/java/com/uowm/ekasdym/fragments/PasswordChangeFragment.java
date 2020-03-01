@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -28,12 +28,12 @@ public class PasswordChangeFragment extends Fragment {
 
     private String url;
     private Button submit;
-    private EditText password, repeat, security_key;
+    TextView password,repeat,verification_key;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.password_image_change, container, false);
+        return inflater.inflate(R.layout.password_change, container, false);
     }
 
 
@@ -47,20 +47,22 @@ public class PasswordChangeFragment extends Fragment {
         getActivity();
         new Password_Change_Request().execute();
         submit = getActivity().findViewById(R.id.sent);
-        password = getActivity().findViewById(R.id.password);
+        password = getActivity().findViewById(R.id.new_password);
         repeat = getActivity().findViewById(R.id.repeat_password);
-        security_key = getActivity().findViewById(R.id.security_key);
+        verification_key = getActivity().findViewById(R.id.verification_key);
 
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(password.getText().toString().equals(repeat.getText().toString()) && !security_key.getText().toString().equals("") && !password.getText().toString().equals("")){
-                    new  Password_Change_Submit().execute();
+        submit.setOnClickListener(v -> {
+            if(password.getText().toString().equals(repeat.getText().toString()) && !password.getText().toString().equals("")){
+                if(!verification_key.getText().toString().equals("")) {
+                    new Password_Change_Submit().execute();
                 }else{
-                    Toast toast = Toast.makeText(getActivity(), getString(R.string.password_doesnt_match), Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getActivity(), getString(R.string.revocery_key_empty), Toast.LENGTH_LONG);
                     toast.show();
                 }
+            }else{
+                Toast toast = Toast.makeText(getActivity(), getString(R.string.password_doesnt_match), Toast.LENGTH_LONG);
+                toast.show();
             }
         });
 
@@ -159,6 +161,7 @@ public class PasswordChangeFragment extends Fragment {
 
         }
 
+        @SuppressLint("WrongThread")
         @Override
         protected String doInBackground(String...args) {
 
@@ -174,7 +177,7 @@ public class PasswordChangeFragment extends Fragment {
                 }
             }
             res.close();
-            url = getString(R.string.server) + "passwordChange.php?id=" + user_id + "&safe_key=" + safe_key + "&password="+password.getText().toString()+"&recovery_code="+security_key.getText().toString();
+            url = getString(R.string.server) + "passwordChange.php?id=" + user_id + "&safe_key=" + safe_key + "&password="+password.getText().toString()+"&recovery_code="+verification_key.getText().toString();
 
             JSONParser jParser = new JSONParser();
 

@@ -142,6 +142,7 @@ Under the jurisdiction of the Union are the teams belonging to the Prefectures o
     <string name="image_upload">Image Upload</string>
     <string name="image_select">Select An Image From Your Inventory</string>
     <string name="image_name">Enter Image Name</string>
+    <string name="revocery_key_empty">Please Ιnsert Security Key</string>
 
 
 </resources>

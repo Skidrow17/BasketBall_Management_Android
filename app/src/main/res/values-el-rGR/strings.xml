@@ -145,5 +145,7 @@
     <string name="image_upload">Aνέβασμα φωτογραφίας</string>
     <string name="image_select">Επιλέξτε μια εικόνα</string>
     <string name="image_name">Εισάγετε όνομα εικόνας</string>
+    <string name="revocery_key_empty">Εισάγετε κλειδί ασφαλείας</string>
+
 
 </resources>
