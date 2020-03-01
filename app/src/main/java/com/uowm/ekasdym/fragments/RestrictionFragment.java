@@ -45,6 +45,7 @@ public class RestrictionFragment extends Fragment implements OnSelectDateListene
     private Button btn_time;
     private Button btn_time_Till;
     private Button submit;
+    private TextView comment;
 
     @Nullable
     @Override
@@ -67,6 +68,8 @@ public class RestrictionFragment extends Fragment implements OnSelectDateListene
         btn_time_Till =(Button) getActivity().findViewById(R.id.btn_till_timePicker);
         btn_time =(Button) getActivity().findViewById(R.id.btn_timePicker);
         submit = (Button) getActivity().findViewById(R.id.submit);
+        comment = (TextView) getActivity().findViewById(R.id.comment);
+
 
         DatePickerBuilder manyDaysBuilder = new DatePickerBuilder(getActivity(), this)
                 .pickerType(CalendarView.MANY_DAYS_PICKER)
@@ -202,7 +205,7 @@ public class RestrictionFragment extends Fragment implements OnSelectDateListene
                 }
             }
             res.close();
-            url = getString(R.string.server) + "setRestriction.php?date=" + Date + "&time=" + Time + "&time2=" + Time2 + "&user_id=" + user_id + "&safe_key=" + safe_key;
+            url = getString(R.string.server) + "setRestriction.php?date=" + Date + "&time=" + Time + "&time2=" + Time2 + "&user_id=" + user_id + "&safe_key=" + safe_key+"&comment="+comment.getText().toString();
 
             JSONParser jParser = new JSONParser();
 
@@ -291,7 +294,7 @@ public class RestrictionFragment extends Fragment implements OnSelectDateListene
                 }
             }
             res.close();
-            url = getString(R.string.server) + "setMultipleRestriction.php?date='" + dates + "'&user_id=" + user_id + "&safe_key=" + safe_key;
+            url = getString(R.string.server) + "setMultipleRestriction.php?date='" + dates + "'&user_id=" + user_id + "&safe_key=" + safe_key+"&comment="+comment.getText().toString();
 
             JSONParser jParser = new JSONParser();
 

@@ -13,7 +13,6 @@
         android:id="@+id/txt_TextDateTime"
         android:layout_width="268dp"
         android:layout_height="58dp"
-
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
@@ -27,10 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="104dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="98dp"
         android:background="@drawable/button_border"
-        android:text="@string/select_date" />
+        android:text="@string/select_date"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/btn_timePicker"
@@ -56,22 +55,36 @@
     <Button
         android:id="@+id/openManyDaysPickerDialogButton"
         android:layout_width="132dp"
-        android:layout_height="72dp"
+        android:layout_height="52dp"
         android:textColor="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/txt_TextDateTime"
         android:layout_marginBottom="113dp"
         android:background="@drawable/button_border"
-        android:text="@string/multiple_restrictions" />
+        android:text="@string/multiple_restrictions"
+        android:layout_alignLeft="@+id/txt_TextDateTime" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="132dp"
-        android:layout_height="72dp"
+        android:layout_height="52dp"
         android:textColor="@color/white"
         android:layout_alignEnd="@+id/txt_TextDateTime"
         android:layout_alignTop="@+id/openManyDaysPickerDialogButton"
         android:background="@drawable/button_border"
-        android:text="@string/submit" />
+        android:text="@string/submit"
+        android:layout_alignRight="@+id/txt_TextDateTime" />
+
+    <EditText
+        android:id="@+id/comment"
+        android:layout_width="264dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/btn_till_timePicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-51dp"
+        android:background="@drawable/button_border"
+        android:hint="@string/comment"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

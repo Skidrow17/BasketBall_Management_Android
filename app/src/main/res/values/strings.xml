@@ -155,6 +155,6 @@ Under the jurisdiction of the Union are the teams belonging to the Prefectures o
     <string name="share">Share</string>
     <string name="share_description">Click to share the match results</string>
     <string name="share_message">Match Results for %1$s VS %2$s : %3$s #Football_Scores</string>
-
+    <string name="comment">Comment</string>
 
 </resources>
