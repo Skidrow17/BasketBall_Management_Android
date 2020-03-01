@@ -142,6 +142,7 @@ public class MatchFragment extends ListFragment {
                 }
 
                 final ListView listView = (ListView) getActivity().findViewById(android.R.id.list);
+                registerForContextMenu(listView);
                 listView.setAdapter(new GameListAdapter(MatchFragment.this.getActivity(), matches));
             } else if (error_code == 403) {
                 Toast toast = Toast.makeText(getActivity(), getString(R.string.error_code_403), Toast.LENGTH_LONG);
@@ -158,13 +159,12 @@ public class MatchFragment extends ListFragment {
         }
     }
 
-
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        menu.setHeaderTitle("Μενού");
-        menu.add(0, v.getId(), 0, "Location");
-        menu.add(1, v.getId(), 1, "Score Change");
+        menu.setHeaderTitle(getString(R.string.menu));
+        menu.add(0, v.getId(), 0, getString(R.string.location));
+        menu.add(1, v.getId(), 1, getString(R.string.score));
     }
 
     @Override

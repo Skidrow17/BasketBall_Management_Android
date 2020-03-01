@@ -54,7 +54,7 @@ public class AllMatchesListAdapter extends BaseAdapter {
             holder.team2 = (TextView) convertView.findViewById(R.id.away_name);
             holder.score = convertView.findViewById(R.id.score);
             holder.date = (TextView) convertView.findViewById(R.id.date);
-//            holder.location = (Button) convertView.findViewById(R.id.button5);
+            holder.state = (TextView) convertView.findViewById(R.id.status);
 
             convertView.setTag(holder);
         } else {
@@ -68,16 +68,17 @@ public class AllMatchesListAdapter extends BaseAdapter {
         holder.date.setText(newsItem.getDateTime());
         holder.score.setText(newsItem.getTeam1_score()+"-"+newsItem.getTeam2_score());
 
-
-
-        mainViewholder = (ViewHolder) convertView.getTag();
-
-//        mainViewholder.location.setOnClickListener(v -> {
-//            String url = "http://maps.google.com/maps?daddr=" + ((Match) listData.get(position)).getLatitude() + "," + ((Match) listData.get(position)).getLongitude();
-//            Intent goZe = new Intent(Intent.ACTION_VIEW);
-//            goZe.setData(Uri.parse(url));
-//            context.startActivity(goZe);
-//        });
+        if(newsItem.getState() == 1){
+            holder.state.setText(context.getString(R.string.p1));
+        }else if(newsItem.getState() == 2){
+            holder.state.setText(context.getString(R.string.p2));
+        }else if(newsItem.getState() == 3){
+            holder.state.setText(context.getString(R.string.p3));
+        }else if(newsItem.getState() == 4){
+            holder.state.setText(context.getString(R.string.p4));
+        }else if(newsItem.getState() == 5){
+            holder.state.setText(context.getString(R.string.finale));
+        }
 
 
         return convertView;
@@ -88,7 +89,7 @@ public class AllMatchesListAdapter extends BaseAdapter {
         TextView team2;
         TextView date;
         TextView score;
-        Button location;
+        TextView state;
     }
 
 

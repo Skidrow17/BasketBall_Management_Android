@@ -60,30 +60,6 @@ public class AllMatchesActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        menu.setHeaderTitle("Μενού");
-        menu.add(0, v.getId(), 0, getString(R.string.delete));
-        menu.add(1, v.getId(), 1, getString(R.string.edit));
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        if (item.getGroupId() == 0) {
-            String url = "http://maps.google.com/maps?daddr=" + ((Match) matches.get(info.position)).getLatitude() + "," + ((Match) matches.get(info.position)).getLongitude();
-            Intent goZe = new Intent(Intent.ACTION_VIEW);
-            goZe.setData(Uri.parse(url));
-            startActivity(goZe);
-        } else {
-
-        }
-
-        return true;
-    }
-
     public class JSONParse extends AsyncTask < String, String, String > {
         private ProgressDialog pDialog;
 
@@ -161,6 +137,7 @@ public class AllMatchesActivity extends AppCompatActivity {
                 }
 
                 final ListView listView = (ListView) findViewById(android.R.id.list);
+                registerForContextMenu(listView);
                 listView.setAdapter(new AllMatchesListAdapter(AllMatchesActivity.this, matches));
 
             } else if (error_code == 403) {
@@ -180,6 +157,24 @@ public class AllMatchesActivity extends AppCompatActivity {
             listView.setAdapter(new AllMatchesListAdapter(AllMatchesActivity.this, matches));
 
         }
+    }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle(getString(R.string.menu));
+        menu.add(0, v.getId(), 0, getString(R.string.location));
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        if (item.getGroupId() == 0) {
+            String url = "http://maps.google.com/maps?daddr=" + ((Match) matches.get(info.position)).getLatitude() + "," + ((Match) matches.get(info.position)).getLongitude();
+            Intent goZe = new Intent(Intent.ACTION_VIEW);
+            goZe.setData(Uri.parse(url));
+            startActivity(goZe);
+        }
+        return true;
     }
 }

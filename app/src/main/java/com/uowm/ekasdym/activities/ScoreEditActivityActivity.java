@@ -92,99 +92,77 @@ public class ScoreEditActivityActivity extends AppCompatActivity {
             finale.setChecked(true);
         }
 
-        p1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(!p1.isChecked()){
-                    p1.setChecked(false);
-                }else {
-                    p1.setChecked(true);
-                }
-                state = 1;
-                p2.setChecked(false);
-                p3.setChecked(false);
-                p4.setChecked(false);
-                finale.setChecked(false);
-            }
-        });
-
-        p2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        p1.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if(!p1.isChecked()){
                 p1.setChecked(false);
-                if(!p2.isChecked()){
-                    p2.setChecked(false);
-                }else {
-                    p2.setChecked(true);
-                }
-                state = 2;
-                p3.setChecked(false);
-                p4.setChecked(false);
-                finale.setChecked(false);
+            }else {
+                p1.setChecked(true);
             }
+            state = 1;
+            p2.setChecked(false);
+            p3.setChecked(false);
+            p4.setChecked(false);
+            finale.setChecked(false);
         });
 
-        p3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                p1.setChecked(false);
+        p2.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            p1.setChecked(false);
+            if(!p2.isChecked()){
                 p2.setChecked(false);
-                if(!p3.isChecked()){
-                    p3.setChecked(false);
-                }else {
-                    p3.setChecked(true);
-                }
-                p4.setChecked(false);
-                state = 3;
-                finale.setChecked(false);
+            }else {
+                p2.setChecked(true);
             }
+            state = 2;
+            p3.setChecked(false);
+            p4.setChecked(false);
+            finale.setChecked(false);
         });
 
-        p4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                p1.setChecked(false);
-                p2.setChecked(false);
+        p3.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            p1.setChecked(false);
+            p2.setChecked(false);
+            if(!p3.isChecked()){
                 p3.setChecked(false);
-                if(!p4.isChecked()){
-                    p4.setChecked(false);
-                }else {
-                    p4.setChecked(true);
-                }
-                state = 4;
-                finale.setChecked(false);
+            }else {
+                p3.setChecked(true);
             }
+            p4.setChecked(false);
+            state = 3;
+            finale.setChecked(false);
         });
 
-        finale.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                p1.setChecked(false);
-                p2.setChecked(false);
-                p3.setChecked(false);
+        p4.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            p1.setChecked(false);
+            p2.setChecked(false);
+            p3.setChecked(false);
+            if(!p4.isChecked()){
                 p4.setChecked(false);
-                if(!finale.isChecked()){
-                    finale.setChecked(false);
-                }else {
-                    finale.setChecked(true);
-                }
-                state = 5;
+            }else {
+                p4.setChecked(true);
             }
+            state = 4;
+            finale.setChecked(false);
         });
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!score1.getText().toString().equals("") && !score2.getText().toString().equals(""))
-                    new Sent_Data().execute();
-                else {
-                    Toast toast = Toast.makeText(ScoreEditActivityActivity.this, getString(R.string.empty_score), Toast.LENGTH_LONG);
-                    toast.show();
-                }
+        finale.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            p1.setChecked(false);
+            p2.setChecked(false);
+            p3.setChecked(false);
+            p4.setChecked(false);
+            if(!finale.isChecked()){
+                finale.setChecked(false);
+            }else {
+                finale.setChecked(true);
+            }
+            state = 5;
+        });
+
+        submit.setOnClickListener(v -> {
+            if (!score1.getText().toString().equals("") && !score2.getText().toString().equals(""))
+                new Sent_Data().execute();
+            else {
+                Toast toast = Toast.makeText(ScoreEditActivityActivity.this, getString(R.string.empty_score), Toast.LENGTH_LONG);
+                toast.show();
             }
         });
 
@@ -265,7 +243,6 @@ public class ScoreEditActivityActivity extends AppCompatActivity {
                 Toast toast = Toast.makeText(ScoreEditActivityActivity.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
                 toast.show();
                 ScoreEditActivityActivity.this.finishAffinity();
-
             }
         }
     }
