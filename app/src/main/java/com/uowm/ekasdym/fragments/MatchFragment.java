@@ -1,26 +1,29 @@
 package com.uowm.ekasdym.fragments;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.uowm.ekasdym.R;
+import com.uowm.ekasdym.activities.ScoreEditActivityActivity;
 import com.uowm.ekasdym.adapters.GameListAdapter;
 import com.uowm.ekasdym.database.DatabaseHelper;
 import com.uowm.ekasdym.model.Match;
 import com.uowm.ekasdym.utilities.JSONParser;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,6 +34,8 @@ public class MatchFragment extends ListFragment {
 
     private String url = "";
     private static final String MATCH = "Match_Details";
+    ArrayList <Match> matches = new ArrayList< Match >();
+
 
     @Nullable
     @Override
@@ -46,9 +51,7 @@ public class MatchFragment extends ListFragment {
         fab.setVisibility(View.GONE);
         new JSONParse().execute();
         getActivity();
-
     }
-
 
 
     public class JSONParse extends AsyncTask < String, String, String > {
@@ -93,7 +96,6 @@ public class MatchFragment extends ListFragment {
         @Override
         protected void onPostExecute(String json) {
 
-            ArrayList <Match> matches = new ArrayList< Match >();
 
             final Handler handler = new Handler();
             handler.postDelayed(() -> pDialog.dismiss(), 500);
@@ -152,10 +154,38 @@ public class MatchFragment extends ListFragment {
                 Toast toast = Toast.makeText(getActivity(), getString(R.string.error_code_0), Toast.LENGTH_LONG);
                 toast.show();
                 getActivity().finishAffinity();
-
             }
-
         }
+    }
 
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Μενού");
+        menu.add(0, v.getId(), 0, "Location");
+        menu.add(1, v.getId(), 1, "Score Change");
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        if (item.getGroupId() == 0) {
+            String url = "http://maps.google.com/maps?daddr=" + ((Match) matches.get(info.position)).getLatitude() + "," + ((Match) matches.get(info.position)).getLongitude();
+            Intent goZe = new Intent(Intent.ACTION_VIEW);
+            goZe.setData(Uri.parse(url));
+            startActivity(goZe);
+        } else {
+            Intent i = new Intent(getActivity(), ScoreEditActivityActivity.class);
+            i.putExtra("team1", ((Match) matches.get(info.position)).getTeam1());
+            i.putExtra("team2", ((Match) matches.get(info.position)).getTeam2());
+            i.putExtra("team_score_1", ((Match) matches.get(info.position)).getTeam1_score());
+            i.putExtra("team_score_2", ((Match) matches.get(info.position)).getTeam2_score());
+            i.putExtra("match_id", ((Match) matches.get(info.position)).getMatch_id());
+            i.putExtra("state", ((Match) matches.get(info.position)).getState());
+
+            startActivity(i);
+        }
+        return true;
     }
 }

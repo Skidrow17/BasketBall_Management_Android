@@ -14,10 +14,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.uowm.ekasdym.R;
 import com.uowm.ekasdym.activities.AnnouncementShowActivity;
@@ -26,7 +24,6 @@ import com.uowm.ekasdym.adapters.AnnouncementListAdapter;
 import com.uowm.ekasdym.database.DatabaseHelper;
 import com.uowm.ekasdym.model.Announcement;
 import com.uowm.ekasdym.utilities.JSONParser;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,16 +48,10 @@ public class AnnouncementsFragment extends ListFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         FloatingActionButton fab = getActivity().findViewById(R.id.fab);
         fab.setVisibility(View.VISIBLE);
-
-
         new JSONParse().execute();
         getActivity();
-
-
-
     }
 
 
@@ -166,12 +157,7 @@ public class AnnouncementsFragment extends ListFragment {
                 getActivity().finishAffinity();
 
             }
-
-
-
         }
-
-
     }
 
 

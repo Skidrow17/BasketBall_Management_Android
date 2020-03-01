@@ -7,10 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import com.uowm.ekasdym.R;
 import com.uowm.ekasdym.model.Announcement;
-
 import java.util.ArrayList;
 
 public class AnnouncementListAdapter extends BaseAdapter {
@@ -45,9 +43,9 @@ public class AnnouncementListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.announcement_list, null);
             holder = new ViewHolder();
-            holder.title = (TextView) convertView.findViewById(R.id.security_key);
-            holder.text = (TextView) convertView.findViewById(R.id.password);
-            holder.dateTime = (TextView) convertView.findViewById(R.id.datetime);
+            holder.title = convertView.findViewById(R.id.security_key);
+            holder.text = convertView.findViewById(R.id.password);
+            holder.dateTime = convertView.findViewById(R.id.datetime);
             holder.editor = convertView.findViewById(R.id.editor);
             convertView.setTag(holder);
         } else {
@@ -60,12 +58,8 @@ public class AnnouncementListAdapter extends BaseAdapter {
         holder.text.setText(newsItem.getText());
         holder.dateTime.setText(newsItem.getDateTime());
         holder.editor.setText(newsItem.getEditor());
-
-
         return convertView;
     }
-
-
 
 
     static class ViewHolder {
@@ -73,6 +67,5 @@ public class AnnouncementListAdapter extends BaseAdapter {
         TextView dateTime;
         TextView text;
         TextView editor;
-
     }
 }

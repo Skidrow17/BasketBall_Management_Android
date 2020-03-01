@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import com.uowm.ekasdym.R;
 import com.uowm.ekasdym.activities.AllRankingActivity;
 import com.uowm.ekasdym.model.TeamCategoryGroup;

@@ -74,7 +74,7 @@
     <string name="score">Σκόρ</string>
     <string name="empty_score">Κενό Σκόρ</string>
     <string name="about">Σχετικά Με Εμάς</string>
-    <string name="about_us">Η εφαρμογή υλοποιήθηκε στα πλαίσια διπλωματικής εργασία στο πανεπιστήμιο δυτικής Μακεδονίας από τον φοιτητή Σιλβάν Σόλλα υπό την επιτήρηση του καθηγητή Κ. Μηνά Δασυγένη και του υποψήφιου διδάκτορα Κ. Δημήτρη Ζιούζιο</string>
+    <string name="about_us">Η εφαρμογή αναπτύχθηκε από το Πανεπιστήμιο Δυτικής Μακεδονίας με σκοπό να προάγει τον αθλητισμό στη Δυτική Μακεδονία. Developed by Σιλβάν Σόλλα. Supervised by Επίκουρος Καθηγητής Μηνάς Δασυγένης και Υποψήφιος Διδάκτορας Δημήτρης Ζιούζιος</string>
     <string name="announcements">Ανακοινώσεις</string>
     <string name="contacts">Επαφές</string>
     <string name="delete">Διαγραφή</string>
@@ -146,6 +146,18 @@
     <string name="image_select">Επιλέξτε μια εικόνα</string>
     <string name="image_name">Εισάγετε όνομα εικόνας</string>
     <string name="revocery_key_empty">Εισάγετε κλειδί ασφαλείας</string>
+
+    <string name="today_matches">Today\'s Matches</string>
+    <string name="no_matches_available">No matches available</string>
+
+    <string name="home_team_description">Home team</string>
+    <string name="away_team_description">Away team</string>
+    <string name="score_description">scored %1$s</string>
+    <string name="date_description">at %1$s against</string>
+
+    <string name="share">Share</string>
+    <string name="share_description">Click to share the match results</string>
+    <string name="share_message">Match Results for %1$s VS %2$s : %3$s #Football_Scores</string>
 
 
 </resources>

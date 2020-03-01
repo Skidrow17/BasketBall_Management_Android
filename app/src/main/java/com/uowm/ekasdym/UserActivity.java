@@ -1,21 +1,34 @@
 package com.uowm.ekasdym;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import com.bumptech.glide.Glide;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
+import com.uowm.ekasdym.database.DatabaseHelper;
+import com.uowm.ekasdym.utilities.JSONParser;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import android.os.Handler;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static com.uowm.ekasdym.database.DatabaseHelper.TABLE_NAME;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -59,18 +72,27 @@ public class UserActivity extends AppCompatActivity {
              .into(iv);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                navController.navigate(R.id.fab);
-            }
-        });
+        fab.setOnClickListener(v -> navController.navigate(R.id.fab));
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            new PushNotificationDissable().execute();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -78,5 +100,83 @@ public class UserActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public class PushNotificationDissable extends AsyncTask< String, String, String > {
+        private ProgressDialog pDialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(UserActivity.this);
+            pDialog.setMessage(getString(R.string.waiting_screen));
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+
+        }
+
+        @Override
+        protected String doInBackground(String...args) {
+
+            DatabaseHelper myDb = new DatabaseHelper(UserActivity.this);
+            Cursor res = myDb.getAllData();
+            String user_id = "";
+            String safe_key = "";
+
+            if (res.getCount() != 0) {
+                while (res.moveToNext()) {
+                    user_id = res.getString(3);
+                    safe_key = res.getString(5);
+                }
+            }
+            res.close();
+            String url = getString(R.string.server) + "deleteMobileToken.php?id=" + user_id + "&safe_key=" + safe_key;
+            JSONParser jParser = new JSONParser();
+            String st = jParser.getJSONFromUrl(url);
+
+            return st;
+        }
+
+
+        @Override
+        protected void onPostExecute(String json) {
+
+            final Handler handler = new Handler();
+            handler.postDelayed(() -> pDialog.dismiss(), 500);
+
+            int error_code = 0;
+            JSONObject jobj = null;
+
+
+            try {
+                jobj = new JSONObject(json);
+                JSONObject jobj4 = jobj.getJSONObject("ERROR");
+                error_code = jobj4.getInt("error_code");
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            if (error_code == 200) {
+                Toast toast = Toast.makeText(UserActivity.this, getString(R.string.error_code_200), Toast.LENGTH_LONG);
+                toast.show();
+                DatabaseHelper myDb = new DatabaseHelper(UserActivity.this);
+                myDb.clearUserTable();
+                Intent i = new Intent(UserActivity.this, GuestActivity.class);
+                startActivity(i);
+            } else if (error_code == 403) {
+                Toast toast = Toast.makeText(UserActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
+                toast.show();
+                UserActivity.this.finishAffinity();
+            } else if (error_code == 201) {
+                Toast toast = Toast.makeText(UserActivity.this, getString(R.string.error_code_201), Toast.LENGTH_LONG);
+                toast.show();
+            } else {
+                Toast toast = Toast.makeText(UserActivity.this, getString(R.string.error_code_0), Toast.LENGTH_LONG);
+                toast.show();
+                UserActivity.this.finishAffinity();
+            }
+        }
     }
 }

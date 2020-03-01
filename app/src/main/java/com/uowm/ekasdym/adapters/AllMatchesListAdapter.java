@@ -48,12 +48,13 @@ public class AllMatchesListAdapter extends BaseAdapter {
         final ViewHolder holder;
         ViewHolder mainViewholder = null;
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.all_game_list, null);
+            convertView = layoutInflater.inflate(R.layout.list_item_match, null);
             holder = new ViewHolder();
-            holder.team1 = (TextView) convertView.findViewById(R.id.textView2);
-            holder.team2 = (TextView) convertView.findViewById(R.id.textView3);
-            holder.date = (TextView) convertView.findViewById(R.id.textView4);
-            holder.location = (Button) convertView.findViewById(R.id.button5);
+            holder.team1 = (TextView) convertView.findViewById(R.id.home_name);
+            holder.team2 = (TextView) convertView.findViewById(R.id.away_name);
+            holder.score = convertView.findViewById(R.id.score);
+            holder.date = (TextView) convertView.findViewById(R.id.date);
+//            holder.location = (Button) convertView.findViewById(R.id.button5);
 
             convertView.setTag(holder);
         } else {
@@ -65,17 +66,18 @@ public class AllMatchesListAdapter extends BaseAdapter {
         holder.team1.setText(newsItem.getTeam1());
         holder.team2.setText(newsItem.getTeam2());
         holder.date.setText(newsItem.getDateTime());
+        holder.score.setText(newsItem.getTeam1_score()+"-"+newsItem.getTeam2_score());
 
 
 
         mainViewholder = (ViewHolder) convertView.getTag();
 
-        mainViewholder.location.setOnClickListener(v -> {
-            String url = "http://maps.google.com/maps?daddr=" + ((Match) listData.get(position)).getLatitude() + "," + ((Match) listData.get(position)).getLongitude();
-            Intent goZe = new Intent(Intent.ACTION_VIEW);
-            goZe.setData(Uri.parse(url));
-            context.startActivity(goZe);
-        });
+//        mainViewholder.location.setOnClickListener(v -> {
+//            String url = "http://maps.google.com/maps?daddr=" + ((Match) listData.get(position)).getLatitude() + "," + ((Match) listData.get(position)).getLongitude();
+//            Intent goZe = new Intent(Intent.ACTION_VIEW);
+//            goZe.setData(Uri.parse(url));
+//            context.startActivity(goZe);
+//        });
 
 
         return convertView;
@@ -85,6 +87,7 @@ public class AllMatchesListAdapter extends BaseAdapter {
         TextView team1;
         TextView team2;
         TextView date;
+        TextView score;
         Button location;
     }
 

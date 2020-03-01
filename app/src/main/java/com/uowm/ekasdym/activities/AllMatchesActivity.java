@@ -5,25 +5,25 @@ package com.uowm.ekasdym.activities;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.uowm.ekasdym.R;
 import com.uowm.ekasdym.adapters.AllMatchesListAdapter;
 import com.uowm.ekasdym.model.Match;
 import com.uowm.ekasdym.utilities.JSONParser;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 
@@ -32,7 +32,7 @@ public class AllMatchesActivity extends AppCompatActivity {
     private String url = "",name = "";
     private int id;
     private static final String Match_Details = "Match_Details";
-
+    ArrayList <Match> matches = new ArrayList < > ();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,30 @@ public class AllMatchesActivity extends AppCompatActivity {
         return true;
     }
 
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Μενού");
+        menu.add(0, v.getId(), 0, getString(R.string.delete));
+        menu.add(1, v.getId(), 1, getString(R.string.edit));
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        if (item.getGroupId() == 0) {
+            String url = "http://maps.google.com/maps?daddr=" + ((Match) matches.get(info.position)).getLatitude() + "," + ((Match) matches.get(info.position)).getLongitude();
+            Intent goZe = new Intent(Intent.ACTION_VIEW);
+            goZe.setData(Uri.parse(url));
+            startActivity(goZe);
+        } else {
+
+        }
+
+        return true;
+    }
 
     public class JSONParse extends AsyncTask < String, String, String > {
         private ProgressDialog pDialog;
@@ -91,7 +115,7 @@ public class AllMatchesActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String json) {
 
-            ArrayList <Match> matches = new ArrayList < > ();
+
 
             final Handler handler = new Handler();
             handler.postDelayed(() -> pDialog.dismiss(), 500);
@@ -156,5 +180,6 @@ public class AllMatchesActivity extends AppCompatActivity {
             listView.setAdapter(new AllMatchesListAdapter(AllMatchesActivity.this, matches));
 
         }
+
     }
 }

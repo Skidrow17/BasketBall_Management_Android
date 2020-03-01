@@ -71,7 +71,7 @@
     <string name="score">Score</string>
     <string name="empty_score">Empty Score</string>
     <string name="about">About Us</string>
-    <string name="about_us">The application is part of a diploma thesis that took place at the University of Western Macedonia by the student Silvan Solla under the supervision of Professor Mr. Minas Dasigeni and Ph.D. student Mr. Dimitri Ziouzio</string>
+    <string name="about_us">The application is part of a diploma thesis that took place at the University of Western Macedonia by the student Silvan Solla under the supervision of Professor Mr. Minas Dasigeni and Ph.D. student Mr. Dimitri Ziouzios</string>
     <string name="announcements">Announcements</string>
     <string name="contacts">Contacts</string>
     <string name="delete">Delete</string>
@@ -143,6 +143,18 @@ Under the jurisdiction of the Union are the teams belonging to the Prefectures o
     <string name="image_select">Select An Image From Your Inventory</string>
     <string name="image_name">Enter Image Name</string>
     <string name="revocery_key_empty">Please Ιnsert Security Key</string>
+
+    <string name="today_matches">Today\'s Matches</string>
+    <string name="no_matches_available">No matches available</string>
+
+    <string name="home_team_description">Home team</string>
+    <string name="away_team_description">Away team</string>
+    <string name="score_description">scored %1$s</string>
+    <string name="date_description">at %1$s against</string>
+
+    <string name="share">Share</string>
+    <string name="share_description">Click to share the match results</string>
+    <string name="share_message">Match Results for %1$s VS %2$s : %3$s #Football_Scores</string>
 
 
 </resources>
