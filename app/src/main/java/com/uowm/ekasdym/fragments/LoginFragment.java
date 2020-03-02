@@ -92,11 +92,9 @@ public class LoginFragment extends Fragment {
 
         @Override
         protected String doInBackground(String... args) {
-
             String url = getString(R.string.server) + "login.php?username=" + username_filtered + "&password=" + password_filtered + "&device_name=" + device_name_filtered+"&mobile_token="+ FirebaseInstanceId.getInstance().getToken();
             JSONParser jParser = new JSONParser();
             String st = jParser.getJSONFromUrl(url);
-
             return st;
         }
 

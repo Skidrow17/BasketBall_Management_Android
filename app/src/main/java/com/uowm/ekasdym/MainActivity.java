@@ -153,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
 
                     Toast toast = Toast.makeText(MainActivity.this, getString(R.string.correct_user), Toast.LENGTH_LONG);
                     toast.show();
-
                     if (profile.equals("Admin")) {
                         Intent i = new Intent(MainActivity.this, AdminActivity.class);
                         i.putExtra("name", name + " " + surname);
