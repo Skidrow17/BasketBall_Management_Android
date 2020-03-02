@@ -34,9 +34,9 @@
     <string name="material_calendar_negative_button">Akyro</string>
 
     <string name="action_settings">Logout</string>
-    <string name="image_server">http://zafora.ece.uowm.gr/~ictest00909/EKA/</string>
+    <string name="image_server">https://zafora.ece.uowm.gr/~ictest00909/EKA/</string>
     <string name="apk_server">https://zafora.ece.uowm.gr/~ictest00909/EKASDYM/apk</string>
-    <string name="server">http://zafora.ece.uowm.gr/~ictest00909/EKA/apk/json/</string>
+    <string name="server">https://zafora.ece.uowm.gr/~ictest00909/EKA/apk/json/</string>
     <string name="aplication_version">1.0</string>
 
     <string name="error_code_403">Login from another device</string>
