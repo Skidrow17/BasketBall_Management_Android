@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.uowm.ekasdym.AdminActivity;
 import com.uowm.ekasdym.R;
 import com.uowm.ekasdym.UserActivity;
 import com.uowm.ekasdym.database.DatabaseHelper;
@@ -162,7 +163,7 @@ public class LoginFragment extends Fragment {
                     toast.show();
 
                     if (profile.equals("Admin")) {
-                        Intent i = new Intent(getActivity(), UserActivity.class);
+                        Intent i = new Intent(getActivity(), AdminActivity.class);
                         i.putExtra("name", name + " " + surname);
                         i.putExtra("profile_pic", getString(R.string.image_server) + profile_pic);
                         i.putExtra("profile", profile);
