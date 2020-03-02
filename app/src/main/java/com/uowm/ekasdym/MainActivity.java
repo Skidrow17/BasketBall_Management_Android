@@ -6,11 +6,9 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.uowm.ekasdym.database.DatabaseHelper;
 import com.uowm.ekasdym.utilities.JSONParser;
@@ -157,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                     toast.show();
 
                     if (profile.equals("Admin")) {
-                        Intent i = new Intent(MainActivity.this, UserActivity.class);
+                        Intent i = new Intent(MainActivity.this, AdminActivity.class);
                         i.putExtra("name", name + " " + surname);
                         i.putExtra("profile_pic", getString(R.string.image_server) + profile_pic);
                         i.putExtra("profile", profile);

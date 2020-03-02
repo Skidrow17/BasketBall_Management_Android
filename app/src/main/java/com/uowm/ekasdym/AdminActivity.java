@@ -1,6 +1,7 @@
 package com.uowm.ekasdym;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -29,6 +31,8 @@ import com.uowm.ekasdym.utilities.JSONParser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import static com.uowm.ekasdym.MainActivity.myDb;
 
 public class AdminActivity extends AppCompatActivity {
 
@@ -47,9 +51,9 @@ public class AdminActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.add_restriction,R.id.weekly_matches,R.id.rank,R.id.rules,R.id.clarification,R.id.about_ekasdym,
-                R.id.about_us,R.id.announcements,R.id.received_messages,R.id.sent_messages,R.id.my_restrictions,
-                R.id.make_announcement,R.id.my_matches,R.id.password_change,R.id.image_change)
+                R.id.weekly_matches,R.id.rank,R.id.rules,R.id.clarification,R.id.about_ekasdym,
+                R.id.about_us,R.id.announcements,R.id.incoming_messages,R.id.sent_messages,
+                R.id.make_announcement,R.id.password_change,R.id.image_change,R.id.administration)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -73,6 +77,30 @@ public class AdminActivity extends AppCompatActivity {
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(v -> navController.navigate(R.id.fab));
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.logout_message))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        new PushNotificationDissable().execute();
+                        DatabaseHelper myDb = new DatabaseHelper(AdminActivity.this);
+                        myDb.clearUserTable();
+                        Intent i = new Intent(AdminActivity.this, GuestActivity.class);
+                        startActivity(i);
+                    }
+                })
+                .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 

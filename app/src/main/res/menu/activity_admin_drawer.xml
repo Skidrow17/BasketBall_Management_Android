@@ -5,44 +5,35 @@
     >
 
     <group android:checkableBehavior="single">
-
         <item
             android:id="@+id/announcements"
             android:icon="@drawable/announcements"
             android:title="@string/announcements" />
         <item
-            android:id="@+id/my_matches"
-            android:icon="@drawable/game"
-            android:title="@string/matches" />
-        <item
             android:id="@+id/weekly_matches"
             android:icon="@drawable/basketball"
             android:title="@string/weekly_matches" />
-        <item
-            android:id="@+id/add_restriction"
-            android:icon="@drawable/addrestriction"
-            android:title="@string/restrictions" />
-        <item
-            android:id="@+id/my_restrictions"
-            android:icon="@drawable/restriction"
-            android:title="@string/my_restrictions" />
         <item
             android:id="@+id/make_announcement"
             android:icon="@drawable/announce"
             android:title="@string/new_announcement" />
         <item
-            android:id="@+id/received_messages"
+            android:id="@+id/incoming_messages"
             android:icon="@drawable/inb"
             android:title="@string/incoming" />
         <item
             android:id="@+id/sent_messages"
             android:icon="@drawable/send"
             android:title="@string/outgoing" />
-
         <item
             android:id="@+id/rank"
             android:icon="@drawable/rank"
             android:title="@string/ranking" />
+        <item
+            android:id="@+id/administration"
+            android:icon="@drawable/management"
+            android:title="@string/administration" />
+
     </group>
 
     <item android:title="@string/others">
@@ -81,10 +72,6 @@
                 android:id="@+id/password_change"
                 android:icon="@drawable/password"
                 android:title="@string/password_change" />
-
         </menu>
     </item>
-
-
-
 </menu>

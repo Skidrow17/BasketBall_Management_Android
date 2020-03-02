@@ -6,12 +6,6 @@
     app:startDestination="@+id/announcements">
 
     <fragment
-        android:id="@+id/add_restriction"
-        android:name="com.uowm.ekasdym.fragments.RestrictionFragment"
-        android:label="@string/restrictions"
-        tools:layout="@layout/fragment_restriction" />
-
-    <fragment
         android:id="@+id/weekly_matches"
         android:name="com.uowm.ekasdym.fragments.MatchesCategoriesFragment"
         android:label="@string/weekly_matches"
@@ -54,7 +48,7 @@
         tools:layout="@layout/announcement_list" />
 
     <fragment
-        android:id="@+id/received_messages"
+        android:id="@+id/incoming_messages"
         android:name="com.uowm.ekasdym.fragments.IncommingMessagesFragment"
         android:label="@string/incoming"
         tools:layout="@layout/message_receive_list" />
@@ -65,23 +59,12 @@
         android:label="@string/outgoing"
         tools:layout="@layout/message_sent_list" />
 
-    <fragment
-        android:id="@+id/my_restrictions"
-        android:name="com.uowm.ekasdym.fragments.MyRestrictionsFragment"
-        android:label="@string/my_restrictions"
-        tools:layout="@layout/my_restrictions" />
 
     <fragment
         android:id="@+id/make_announcement"
         android:name="com.uowm.ekasdym.fragments.MakeAnnouncementFragment"
         android:label="@string/new_announcement"
         tools:layout="@layout/announcement_edit" />
-
-    <fragment
-        android:id="@+id/my_matches"
-        android:name="com.uowm.ekasdym.fragments.MatchFragment"
-        android:label="@string/matches"
-        tools:layout="@layout/list_item" />
 
     <fragment
         android:id="@+id/fab"
@@ -100,5 +83,11 @@
         android:name="com.uowm.ekasdym.fragments.ProfilePictureChangeFragment"
         android:label="@string/image_upload"
         tools:layout="@layout/image_upload" />
+
+    <activity
+        android:id="@+id/administration"
+        android:name="com.uowm.ekasdym.activities.Administration"
+        android:label="@string/administration"
+        tools:layout="@layout/webview" />
 
 </navigation>
