@@ -45,37 +45,37 @@
 
         <activity
             android:name=".activities.AllMatchesActivity"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".activities.AllRankingActivity"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".activities.AnnouncementShowActivity"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".activities.EditAnnouncementActivity"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".activities.MessageActivityActivity"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".activities.MessageShowActivityActivity"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
             android:name=".activities.ScoreEditActivityActivity"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
