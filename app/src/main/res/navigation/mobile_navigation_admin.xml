@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_admin"
+    app:startDestination="@+id/announcements">
+
+    <fragment
+        android:id="@+id/add_restriction"
+        android:name="com.uowm.ekasdym.fragments.RestrictionFragment"
+        android:label="@string/restrictions"
+        tools:layout="@layout/fragment_restriction" />
+
+    <fragment
+        android:id="@+id/weekly_matches"
+        android:name="com.uowm.ekasdym.fragments.MatchesCategoriesFragment"
+        android:label="@string/weekly_matches"
+        tools:layout="@layout/list_item" />
+
+    <fragment
+        android:id="@+id/rank"
+        android:name="com.uowm.ekasdym.fragments.MatchesCategoriesGroupsFragment"
+        android:label="@string/ranking"
+        tools:layout="@layout/list_item" />
+
+    <fragment
+        android:id="@+id/rules"
+        android:name="com.uowm.ekasdym.fragments.RulesFragment"
+        android:label="@string/rules"
+        tools:layout="@layout/fragment_rules" />
+
+    <fragment
+        android:id="@+id/clarification"
+        android:name="com.uowm.ekasdym.fragments.ClarificationsFragment"
+        android:label="@string/clarifications"
+        tools:layout="@layout/fragment_clarifications" />
+
+    <fragment
+        android:id="@+id/about_ekasdym"
+        android:name="com.uowm.ekasdym.fragments.AboutEkasdymFragment"
+        android:label="@string/about_ekasdym_title"
+        tools:layout="@layout/fragment_about_ekasdym" />
+
+    <fragment
+        android:id="@+id/about_us"
+        android:name="com.uowm.ekasdym.fragments.AboutUsFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about_ekasdym" />
+
+    <fragment
+        android:id="@+id/announcements"
+        android:name="com.uowm.ekasdym.fragments.AnnouncementsFragment"
+        android:label="@string/announcement"
+        tools:layout="@layout/announcement_list" />
+
+    <fragment
+        android:id="@+id/received_messages"
+        android:name="com.uowm.ekasdym.fragments.IncommingMessagesFragment"
+        android:label="@string/incoming"
+        tools:layout="@layout/message_receive_list" />
+
+    <fragment
+        android:id="@+id/sent_messages"
+        android:name="com.uowm.ekasdym.fragments.OutgoingMessagesFragment"
+        android:label="@string/outgoing"
+        tools:layout="@layout/message_sent_list" />
+
+    <fragment
+        android:id="@+id/my_restrictions"
+        android:name="com.uowm.ekasdym.fragments.MyRestrictionsFragment"
+        android:label="@string/my_restrictions"
+        tools:layout="@layout/my_restrictions" />
+
+    <fragment
+        android:id="@+id/make_announcement"
+        android:name="com.uowm.ekasdym.fragments.MakeAnnouncementFragment"
+        android:label="@string/new_announcement"
+        tools:layout="@layout/announcement_edit" />
+
+    <fragment
+        android:id="@+id/my_matches"
+        android:name="com.uowm.ekasdym.fragments.MatchFragment"
+        android:label="@string/matches"
+        tools:layout="@layout/list_item" />
+
+    <fragment
+        android:id="@+id/fab"
+        android:name="com.uowm.ekasdym.fragments.ContactFragment"
+        android:label="@string/contacts"
+        tools:layout="@layout/contact_list" />
+
+    <fragment
+        android:id="@+id/password_change"
+        android:name="com.uowm.ekasdym.fragments.PasswordChangeFragment"
+        android:label="@string/password_change"
+        tools:layout="@layout/password_change" />
+
+    <fragment
+        android:id="@+id/image_change"
+        android:name="com.uowm.ekasdym.fragments.ProfilePictureChangeFragment"
+        android:label="@string/image_upload"
+        tools:layout="@layout/image_upload" />
+
+</navigation>
