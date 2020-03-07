@@ -45,6 +45,7 @@ public class RestrictionFragment extends Fragment implements OnSelectDateListene
     private Button btn_time;
     private Button btn_time_Till;
     private Button submit;
+    private String text_comment;
     private TextView comment;
 
     @Nullable
@@ -93,8 +94,10 @@ public class RestrictionFragment extends Fragment implements OnSelectDateListene
         btn_time_Till.setOnClickListener(v -> updateTime2());
 
         submit.setOnClickListener(v -> {
-            if (!Date.equals("") && !Time.equals("") && !Time2.equals(""))
+            if (!Date.equals("") && !Time.equals("") && !Time2.equals("")) {
+                text_comment = comment.getText().toString().replaceAll(" ", "%20");
                 new Sent_Data().execute();
+            }
             else {
                 Toast toast = Toast.makeText(getActivity(), getString(R.string.complete_the_fields), Toast.LENGTH_LONG);
                 toast.show();
@@ -198,6 +201,7 @@ public class RestrictionFragment extends Fragment implements OnSelectDateListene
             String user_id = "";
             String safe_key = "";
 
+
             if (res.getCount() != 0) {
                 while (res.moveToNext()) {
                     user_id = res.getString(3);
@@ -205,7 +209,7 @@ public class RestrictionFragment extends Fragment implements OnSelectDateListene
                 }
             }
             res.close();
-            url = getString(R.string.server) + "setRestriction.php?date=" + Date + "&time=" + Time + "&time2=" + Time2 + "&user_id=" + user_id + "&safe_key=" + safe_key+"&comment="+comment.getText().toString();
+            url = getString(R.string.server) + "setRestriction.php?date=" + Date + "&time=" + Time + "&time2=" + Time2 + "&user_id=" + user_id + "&safe_key=" + safe_key+"&comment="+text_comment;
 
             JSONParser jParser = new JSONParser();
 
