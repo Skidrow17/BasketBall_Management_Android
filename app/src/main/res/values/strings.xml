@@ -144,6 +144,8 @@ Under the jurisdiction of the Union are the teams belonging to the Prefectures o
     <string name="image_name">Enter Image Name</string>
     <string name="revocery_key_empty">Please Ιnsert Security Key</string>
     <string name="human_power">Staff</string>
+    <string name="game_not_started_yet">Havent Started Yet</string>
+
 
 
     <string name="today_matches">Today\'s Matches</string>

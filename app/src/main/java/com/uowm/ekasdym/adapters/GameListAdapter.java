@@ -60,8 +60,9 @@ public class GameListAdapter extends BaseAdapter {
         holder.team2.setText(newsItem.getTeam2());
         holder.date.setText(newsItem.getDateTime());
         holder.score.setText(newsItem.getTeam1_score()+"-"+newsItem.getTeam2_score());
-
-        if(newsItem.getState() == 1){
+        if(newsItem.getState() == 0){
+            holder.state.setText(context.getString(R.string.game_not_started_yet));
+        } else if(newsItem.getState() == 1){
             holder.state.setText(context.getString(R.string.p1));
         }else if(newsItem.getState() == 2){
             holder.state.setText(context.getString(R.string.p2));
