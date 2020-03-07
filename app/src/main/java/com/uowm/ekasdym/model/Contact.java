@@ -7,6 +7,7 @@ public class Contact {
     public String last_login;
     public String profile_pic;
     public String phone_number;
+    public String profile;
 
     public Contact(int id , String name,String surname,String profile_pic,String phone_number,String last_login)
     {
@@ -16,6 +17,15 @@ public class Contact {
         this.profile_pic=profile_pic;
         this.phone_number=phone_number;
         this.last_login=last_login;
+    }
+
+    public Contact(int id , String name,String surname,String profile_pic,String profile)
+    {
+        this.id=id;
+        this.name=name;
+        this.surname=surname;
+        this.profile_pic=profile_pic;
+        this.profile = profile;
     }
 
     public String getName()
@@ -47,7 +57,7 @@ public class Contact {
         return "Name : "+name+"\n ID : "+id;
     }
 
-
-
-
+    public String getProfile() {
+        return profile;
+    }
 }

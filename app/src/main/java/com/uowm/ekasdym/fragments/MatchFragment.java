@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.uowm.ekasdym.R;
+import com.uowm.ekasdym.activities.HumanPowerActivity;
 import com.uowm.ekasdym.activities.ScoreEditActivityActivity;
 import com.uowm.ekasdym.adapters.GameListAdapter;
 import com.uowm.ekasdym.database.DatabaseHelper;
@@ -164,7 +165,8 @@ public class MatchFragment extends ListFragment {
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.setHeaderTitle(getString(R.string.menu));
         menu.add(0, v.getId(), 0, getString(R.string.location));
-        menu.add(1, v.getId(), 1, getString(R.string.score));
+        menu.add(1, v.getId(), 1, getString(R.string.human_power));
+        menu.add(2, v.getId(), 2, getString(R.string.score));
     }
 
     @Override
@@ -175,7 +177,12 @@ public class MatchFragment extends ListFragment {
             Intent goZe = new Intent(Intent.ACTION_VIEW);
             goZe.setData(Uri.parse(url));
             startActivity(goZe);
-        } else {
+        }else if(item.getGroupId() == 1){
+            Intent i = new Intent(getActivity(), HumanPowerActivity.class);
+            i.putExtra("gameId", matches.get(info.position).getMatch_id());
+            startActivity(i);
+        }
+        else {
             Intent i = new Intent(getActivity(), ScoreEditActivityActivity.class);
             i.putExtra("team1", ((Match) matches.get(info.position)).getTeam1());
             i.putExtra("team2", ((Match) matches.get(info.position)).getTeam2());

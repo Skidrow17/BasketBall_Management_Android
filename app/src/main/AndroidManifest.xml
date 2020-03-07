@@ -78,6 +78,12 @@
             android:screenOrientation="portrait"></activity>
 
         <activity
+            android:name=".activities.HumanPowerActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"></activity>
+
+
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>

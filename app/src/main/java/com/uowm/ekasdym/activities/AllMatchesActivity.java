@@ -59,7 +59,6 @@ public class AllMatchesActivity extends AppCompatActivity {
         return true;
     }
 
-
     public class JSONParse extends AsyncTask < String, String, String > {
         private ProgressDialog pDialog;
 
@@ -164,6 +163,7 @@ public class AllMatchesActivity extends AppCompatActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.setHeaderTitle(getString(R.string.menu));
         menu.add(0, v.getId(), 0, getString(R.string.location));
+        menu.add(1, v.getId(), 1, getString(R.string.human_power));
     }
 
     @Override
@@ -174,6 +174,10 @@ public class AllMatchesActivity extends AppCompatActivity {
             Intent goZe = new Intent(Intent.ACTION_VIEW);
             goZe.setData(Uri.parse(url));
             startActivity(goZe);
+        }else{
+            Intent i = new Intent(AllMatchesActivity.this, HumanPowerActivity.class);
+            i.putExtra("gameId", matches.get(info.position).getMatch_id());
+            startActivity(i);
         }
         return true;
     }

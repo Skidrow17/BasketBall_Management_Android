@@ -54,7 +54,7 @@ public class MatchesCategoriesFragment extends ListFragment {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(getActivity());
-            pDialog.setMessage(getString(R.string.error_code_200));
+            pDialog.setMessage(getString(R.string.waiting_screen));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();

@@ -146,6 +146,7 @@
     <string name="image_select">Επιλέξτε μια εικόνα</string>
     <string name="image_name">Εισάγετε όνομα εικόνας</string>
     <string name="revocery_key_empty">Εισάγετε κλειδί ασφαλείας</string>
+    <string name="human_power">Προσωπικό</string>
 
     <string name="today_matches">Today\'s Matches</string>
     <string name="no_matches_available">No matches available</string>

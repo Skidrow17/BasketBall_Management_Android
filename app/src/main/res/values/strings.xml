@@ -143,6 +143,8 @@ Under the jurisdiction of the Union are the teams belonging to the Prefectures o
     <string name="image_select">Select An Image From Your Inventory</string>
     <string name="image_name">Enter Image Name</string>
     <string name="revocery_key_empty">Please Ιnsert Security Key</string>
+    <string name="human_power">Staff</string>
+
 
     <string name="today_matches">Today\'s Matches</string>
     <string name="no_matches_available">No matches available</string>
