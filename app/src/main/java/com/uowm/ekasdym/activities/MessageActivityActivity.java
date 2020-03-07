@@ -13,13 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.uowm.ekasdym.R;
 import com.uowm.ekasdym.database.DatabaseHelper;
 import com.uowm.ekasdym.utilities.JSONParser;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.text.DateFormat;
