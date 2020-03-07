@@ -29,9 +29,9 @@
         <item>December</item>
     </array>
 
-    <string name="material_calendar_today_button">Simera</string>
+    <string name="material_calendar_today_button">Today</string>
     <string name="material_calendar_positive_button">OK</string>
-    <string name="material_calendar_negative_button">Akyro</string>
+    <string name="material_calendar_negative_button">Cancel</string>
 
     <string name="action_settings">Logout</string>
     <string name="image_server">https://zafora.ece.uowm.gr/~ictest00909/EKA/</string>
