@@ -27,8 +27,8 @@ import org.json.JSONObject;
 public class PasswordChangeFragment extends Fragment {
 
     private String url;
-    private Button submit;
-    TextView password,repeat,verification_key;
+    private Button submit = null;
+    TextView password = null,repeat = null,verification_key = null;
 
     @Nullable
     @Override
