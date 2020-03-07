@@ -70,8 +70,7 @@ public class AllMatchesListAdapter extends BaseAdapter {
 
         if(newsItem.getState() == 0){
             holder.state.setText(context.getString(R.string.game_not_started_yet));
-        }
-        else if(newsItem.getState() == 1){
+        }else if(newsItem.getState() == 1){
             holder.state.setText(context.getString(R.string.p1));
         }else if(newsItem.getState() == 2){
             holder.state.setText(context.getString(R.string.p2));
