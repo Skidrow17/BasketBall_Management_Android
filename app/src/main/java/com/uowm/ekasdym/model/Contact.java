@@ -17,6 +17,7 @@ public class Contact {
         this.profile_pic=profile_pic;
         this.phone_number=phone_number;
         this.last_login=last_login;
+        this.profile = profile;
     }
 
     public Contact(int id , String name,String surname,String profile_pic,String profile)

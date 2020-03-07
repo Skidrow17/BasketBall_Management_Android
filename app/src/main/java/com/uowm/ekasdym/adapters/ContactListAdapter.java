@@ -63,6 +63,7 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
             holder = new ViewHolder();
             holder.name = convertView.findViewById(R.id.name);
             holder.surname =  convertView.findViewById(R.id.surname);
+            holder.profile = convertView.findViewById(R.id.profile);
             holder.profile_pic = (ImageView)  convertView.findViewById(R.id.profile_pic);
             holder.message =  convertView.findViewById(R.id.password);
             holder.call = convertView.findViewById(R.id.call);
@@ -77,6 +78,8 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
 
         holder.name.setText(newsItem.getName());
         holder.surname.setText(newsItem.getSurname());
+        holder.profile.setText(newsItem.getProfile());
+
 
         if(!newsItem.getLast_login().equals("null")) {
             holder.last_login.setText(newsItem.getLast_login());
@@ -165,6 +168,7 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
         TextView name;
         TextView surname;
         TextView last_login;
+        TextView profile;
         ImageView profile_pic;
         ImageButton message;
         ImageButton call;
