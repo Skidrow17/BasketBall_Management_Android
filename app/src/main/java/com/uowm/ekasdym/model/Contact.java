@@ -9,7 +9,7 @@ public class Contact {
     public String phone_number;
     public String profile;
 
-    public Contact(int id , String name,String surname,String profile_pic,String phone_number,String last_login)
+    public Contact(int id , String name,String surname,String profile_pic,String phone_number,String last_login,String profile)
     {
         this.id=id;
         this.name=name;

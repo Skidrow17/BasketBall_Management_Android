@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (error_code.equals("402")) {
                 Toast toast = Toast.makeText(MainActivity.this, getString(R.string.error_code_402), Toast.LENGTH_LONG);
                 toast.show();
-                Intent i = new Intent(MainActivity.this, UserActivity.class);
+                Intent i = new Intent(MainActivity.this, GuestActivity.class);
                 startActivity(i);
             } else if(error_code.equals("200")) {
                 try {

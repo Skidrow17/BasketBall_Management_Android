@@ -152,8 +152,10 @@ public class ContactFragment extends ListFragment {
                         String surname = obj.getString("surname");
                         String profile_pic = obj.getString("profile_pic");
                         String last_login = obj.getString("last_login");
+                        String profile = obj.getString("profession");
 
-                        Contact referee = new Contact(id, fname, surname, getString(R.string.image_server) + profile_pic, phone_number, last_login);
+
+                        Contact referee = new Contact(id, fname, surname, getString(R.string.image_server) + profile_pic, phone_number, last_login,profile);
                         contacts.add(referee);
                     }
 
