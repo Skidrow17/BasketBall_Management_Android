@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.uowm.ekasdym">
+    package="com.uowm.skidrow.eok">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
@@ -24,67 +24,67 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".AdminActivity"
+            android:name="com.uowm.skidrow.eok.AdminActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".UserActivity"
+            android:name="com.uowm.skidrow.eok.UserActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".GuestActivity"
+            android:name="com.uowm.skidrow.eok.GuestActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
         </activity>
 
         <activity
-            android:name=".activities.AllMatchesActivity"
+            android:name="com.uowm.skidrow.eok.activities.AllMatchesActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.AllRankingActivity"
+            android:name="com.uowm.skidrow.eok.activities.AllRankingActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.AnnouncementShowActivity"
+            android:name="com.uowm.skidrow.eok.activities.AnnouncementShowActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.EditAnnouncementActivity"
+            android:name="com.uowm.skidrow.eok.activities.EditAnnouncementActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.MessageActivityActivity"
+            android:name="com.uowm.skidrow.eok.activities.MessageActivityActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.MessageShowActivityActivity"
+            android:name="com.uowm.skidrow.eok.activities.MessageShowActivityActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.ScoreEditActivityActivity"
+            android:name="com.uowm.skidrow.eok.activities.ScoreEditActivityActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name=".activities.HumanPowerActivity"
+            android:name="com.uowm.skidrow.eok.activities.HumanPowerActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"></activity>
 
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.uowm.skidrow.eok.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -94,11 +94,11 @@
         </activity>
 
         <activity
-            android:name=".activities.Administration"
+            android:name="com.uowm.skidrow.eok.activities.Administration"
             android:theme="@style/Theme.AppCompat.Light"
             android:screenOrientation="portrait"></activity>
 
-        <service android:name=".utilities.FirebaseMessageReceiver">
+        <service android:name="com.uowm.skidrow.eok.utilities.FirebaseMessageReceiver">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
