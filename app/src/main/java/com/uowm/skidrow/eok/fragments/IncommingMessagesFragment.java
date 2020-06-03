@@ -181,6 +181,7 @@ public class IncommingMessagesFragment extends ListFragment {
         intent.putExtra("name_surname", messages.get(position).getName() + " " + messages.get(position).getSurname());
         intent.putExtra("message", messages.get(position).getMessage());
         intent.putExtra("id", messages.get(position).getId());
+        intent.putExtra("sender_id", messages.get(position).getSender_id());
         intent.putExtra("class_name", "Incoming_Message");
         startActivity(intent);
 

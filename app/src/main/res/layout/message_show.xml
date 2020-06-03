@@ -22,5 +22,18 @@
         android:textAlignment="center"
         android:textColor="@color/white" />
 
+    <Button
+        android:id="@+id/reply"
+        android:layout_width="262dp"
+        android:layout_marginLeft="75dp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="2dp"
+        android:text="@string/reply"
+        android:background="@drawable/button_border"
+        />
+
 
 </RelativeLayout>

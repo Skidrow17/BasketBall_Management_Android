@@ -7,6 +7,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +36,7 @@ public class MessageShowActivityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.message_show);
         text = findViewById(R.id.password);
+        Button replyButton = findViewById(R.id.reply);
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -46,6 +49,8 @@ public class MessageShowActivityActivity extends AppCompatActivity {
         String name_surname = intent.getStringExtra("name_surname");
         String class_name = intent.getStringExtra("class_name");
         message_id = intent.getIntExtra("id", 0);
+        Integer sender_id = intent.getIntExtra("sender_id",0);
+
         text.setText(message);
 
 
@@ -55,7 +60,19 @@ public class MessageShowActivityActivity extends AppCompatActivity {
 
         } else {
             getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'>"+getString(R.string.to)+" : " + name_surname + "</font>"));
+            replyButton.setVisibility(View.GONE);
         }
+
+        replyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MessageShowActivityActivity.this, MessageActivityActivity.class);
+                intent.putExtra("id", sender_id);
+                intent.putExtra("name_surname", name_surname);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

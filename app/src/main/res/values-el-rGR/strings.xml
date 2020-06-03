@@ -43,7 +43,7 @@
 
     <string name="error_code_403">Login απο άλλη συσκευή</string>
     <string name="error_code_406">Λανθασμένο κλειδί επαναφοράς</string>
-    <string name="error_code_206">Έχει γίνει ίδη αίτηση</string>
+    <string name="error_code_206">Έχει γίνει ήδη αίτηση</string>
     <string name="error_code_204">Δεν υπάρχουν Δεδομένα</string>
     <string name="error_code_201">Αποτυχία</string>
     <string name="error_code_202">Τα Κωλύματα Κλειδώθηκαν</string>
