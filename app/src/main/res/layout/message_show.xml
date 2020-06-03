@@ -25,7 +25,9 @@
     <Button
         android:id="@+id/reply"
         android:layout_width="262dp"
-        android:layout_marginLeft="75dp"
+        android:gravity="top|left"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
         android:padding="10dp"
         android:textColor="@color/white"
         android:layout_height="wrap_content"

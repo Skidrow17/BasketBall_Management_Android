@@ -26,8 +26,10 @@
     <Button
         android:id="@+id/sent"
         android:layout_width="262dp"
-        android:layout_marginLeft="75dp"
+        android:gravity="top|left"
+        android:layout_centerHorizontal="true"
         android:padding="10dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
