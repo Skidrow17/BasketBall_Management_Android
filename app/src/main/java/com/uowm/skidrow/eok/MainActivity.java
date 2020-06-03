@@ -149,6 +149,10 @@ public class MainActivity extends AppCompatActivity {
                 if (active == 1) {
                     Toast toast = Toast.makeText(MainActivity.this, getString(R.string.inactive_account), Toast.LENGTH_LONG);
                     toast.show();
+                    DatabaseHelper myDb = new DatabaseHelper(MainActivity.this);
+                    myDb.clearUserTable();
+                    Intent i = new Intent(MainActivity.this, GuestActivity.class);
+                    startActivity(i);
                 } else {
                     Toast toast = Toast.makeText(MainActivity.this, getString(R.string.correct_user), Toast.LENGTH_LONG);
                     toast.show();
