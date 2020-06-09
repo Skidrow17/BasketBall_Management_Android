@@ -30,7 +30,7 @@ public class MessageViewFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         text = getActivity().findViewById(R.id.read_text);
-        text.setText("VIEW ::: "+getArguments().getString("message"));
+        text.setText(getArguments().getString("message"));
     }
 
 } 

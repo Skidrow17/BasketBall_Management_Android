@@ -140,7 +140,7 @@ public class OutgoingMessagesFragment extends ListFragment
                     String text_message = obj.getString("text_message");
                     String profile_pic = obj.getString("profile_pic");
                     String date_time = obj.getString("date_time");
-
+                    int receiver_id = obj.getInt("receiver_id");
                     int message_status = obj.getInt("message_read");
                     String st = "";
                     if(message_status==1)
@@ -148,7 +148,7 @@ public class OutgoingMessagesFragment extends ListFragment
                     else
                         st = getString(R.string.unread);
 
-                    Message message = new Message(id,name,surname,text_message,getString(R.string.image_server)+profile_pic,date_time,st);
+                    Message message = new Message(id,name,surname,text_message,getString(R.string.image_server)+profile_pic,date_time,st,receiver_id);
                     messages.add(message);
                 }
             } catch (JSONException e) {
@@ -185,6 +185,7 @@ public class OutgoingMessagesFragment extends ListFragment
         Intent intent =new Intent(getActivity(), MessageShowActivityActivity.class);
         intent.putExtra("name_surname",messages.get(position).getName()+" "+messages.get(position).getSurname());
         intent.putExtra("message",messages.get(position).getMessage());
+        intent.putExtra("sender_id", messages.get(position).getSender_id());
         intent.putExtra("class_name","OutgoingMessagesFragment");
         startActivity(intent);
 

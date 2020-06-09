@@ -9,7 +9,7 @@
         android:background="@drawable/background"
         >
 
-        <TextView
+        <EditText
             android:id="@+id/send_text"
             android:layout_width="262dp"
             android:layout_height="255dp"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/send_text"
             android:layout_marginTop="2dp"
-            android:text="@string/reply"
+            android:text="@string/submit"
             android:background="@drawable/button_border"
             />
 
