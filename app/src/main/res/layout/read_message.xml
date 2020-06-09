@@ -10,9 +10,9 @@
         >
 
         <TextView
-            android:id="@+id/password"
-            android:layout_width="298dp"
-            android:layout_height="407dp"
+            android:id="@+id/read_text"
+            android:layout_width="262dp"
+            android:layout_height="255dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="96dp"
@@ -20,7 +20,7 @@
             android:gravity="top|left"
             android:inputType="textMultiLine"
             android:lines="8"
-            android:maxLines="12"
+            android:maxLines="10"
             android:minLines="6"
             android:padding="10dp"
             android:textAlignment="center"

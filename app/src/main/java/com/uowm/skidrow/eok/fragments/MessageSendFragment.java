@@ -29,8 +29,9 @@ public class MessageSendFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        text = getActivity().findViewById(R.id.password);
-        text.setText(getArguments().getString("message"));
+        text = getActivity().findViewById(R.id.send_text);
+        text.setText("Hello ::: "+getArguments().getString("message"));
+
     }
 
 } 

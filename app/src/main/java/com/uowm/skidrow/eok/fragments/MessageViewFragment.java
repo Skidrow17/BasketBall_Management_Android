@@ -22,15 +22,15 @@ public class MessageViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment  
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.read_message, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        text = getActivity().findViewById(R.id.password);
-        text.setText(getArguments().getString("message"));
+        text = getActivity().findViewById(R.id.read_text);
+        text.setText("VIEW ::: "+getArguments().getString("message"));
     }
 
 } 
