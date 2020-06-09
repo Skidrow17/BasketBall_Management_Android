@@ -1,0 +1,32 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        >
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="298dp"
+            android:layout_height="407dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="96dp"
+            android:background="@drawable/button_border"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:maxLines="12"
+            android:minLines="6"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>

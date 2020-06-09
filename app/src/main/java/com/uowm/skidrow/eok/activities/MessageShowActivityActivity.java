@@ -1,47 +1,40 @@
 package com.uowm.skidrow.eok.activities;
 
 
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
 import com.uowm.skidrow.eok.R;
+import com.uowm.skidrow.eok.adapters.TabAdapter;
 import com.uowm.skidrow.eok.database.DatabaseHelper;
+import com.uowm.skidrow.eok.fragments.MessageViewFragment;
 import com.uowm.skidrow.eok.utilities.JSONParser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
 public class MessageShowActivityActivity extends AppCompatActivity {
 
-
-    TextView text;
+    TabLayout tabLayout;
+    ViewPager viewPager;
     int message_id;
     String url;
 
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.message_show);
-        text = findViewById(R.id.password);
-        Button replyButton = findViewById(R.id.reply);
-
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left);
+        setContentView(R.layout.message_tab);
 
 
         Intent intent = getIntent();
@@ -51,33 +44,59 @@ public class MessageShowActivityActivity extends AppCompatActivity {
         message_id = intent.getIntExtra("id", 0);
         Integer sender_id = intent.getIntExtra("sender_id",0);
 
-        text.setText(message);
+        Bundle bundle = new Bundle();
+        bundle.putString("name_surname", name_surname);
+        bundle.putString("message", message);
+        bundle.putInt("id",message_id);
+        bundle.putInt("sender_id", sender_id);
 
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_left);
 
         if (class_name.equals("Incoming_Message")) {
             getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'>"+getString(R.string.from)+" : " + name_surname + "</font>"));
             new Message_Status_Change().execute();
-
         } else {
             getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF'>"+getString(R.string.to)+" : " + name_surname + "</font>"));
-            replyButton.setVisibility(View.GONE);
         }
 
-        replyButton.setOnClickListener(new View.OnClickListener() {
+
+        tabLayout=(TabLayout)findViewById(R.id.tabLayout);
+        viewPager=(ViewPager)findViewById(R.id.viewPager);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Μήνυμα"));
+        tabLayout.addTab(tabLayout.newTab().setText("Αποστολή"));
+        tabLayout.addTab(tabLayout.newTab().setText("Ιστορικό"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+
+        final TabAdapter adapter = new TabAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount(),bundle);
+        viewPager.setAdapter(adapter);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MessageShowActivityActivity.this, MessageActivityActivity.class);
-                intent.putExtra("id", sender_id);
-                intent.putExtra("name_surname", name_surname);
-                startActivity(intent);
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
 
-
     }
 
-
-    public class Message_Status_Change extends AsyncTask < String, String, String > {
+    public class Message_Status_Change extends AsyncTask< String, String, String > {
 
 
         @Override
@@ -136,5 +155,4 @@ public class MessageShowActivityActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
-
 }

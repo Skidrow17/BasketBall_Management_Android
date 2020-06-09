@@ -162,4 +162,8 @@
     <string name="share_message">Match Results for %1$s VS %2$s : %3$s #Football_Scores</string>
     <string name="comment">Σχόλιο</string>
 
+    <string name="home_fragment">Home Fragment</string>
+    <string name="sport_fragment">Sport Fragment</string>
+    <string name="movie_fragment">Movie Fragment</string>
+
 </resources>
