@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "707613194453",
+    "firebase_url": "https://ekasdym-e8cc1.firebaseio.com",
+    "project_id": "ekasdym-e8cc1",
+    "storage_bucket": "ekasdym-e8cc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707613194453:android:f2b52535edd8a25ee70a5c",
+        "android_client_info": {
+          "package_name": "com.uowm.skidrow.eok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707613194453-cvr2qcgshje2ro0sjmus0ess3j33k2op.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK_DgUCRRrISk9xxdT0c-Avrh3i1Hk3Ss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707613194453-cvr2qcgshje2ro0sjmus0ess3j33k2op.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

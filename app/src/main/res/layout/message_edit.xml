@@ -8,29 +8,32 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="253dp"
-        android:layout_height="wrap_content"
+        android:layout_width="262dp"
+        android:layout_height="255dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="178dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/button_border"
         android:gravity="top|left"
-        android:textColor="@color/white"
         android:inputType="textMultiLine"
         android:lines="8"
         android:maxLines="10"
         android:minLines="6"
+        android:padding="10dp"
         android:textAlignment="center"
-        android:padding="10dp" />
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/sent"
-        android:layout_width="253dp"
+        android:layout_width="262dp"
+        android:gravity="top|left"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-178dp"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="2dp"
         android:background="@drawable/button_border"
         android:text="@string/submit" />
 

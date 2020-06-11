@@ -9,7 +9,7 @@
 
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
@@ -25,7 +25,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/security_key" />
+        app:layout_constraintTop_toTopOf="@+id/title" />
 
     <Button
         android:id="@+id/sent"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/security_key"
+        android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="46dp"
         android:background="@drawable/button_border"

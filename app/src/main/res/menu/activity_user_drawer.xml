@@ -38,7 +38,6 @@
             android:id="@+id/sent_messages"
             android:icon="@drawable/send"
             android:title="@string/outgoing" />
-
         <item
             android:id="@+id/rank"
             android:icon="@drawable/rank"
