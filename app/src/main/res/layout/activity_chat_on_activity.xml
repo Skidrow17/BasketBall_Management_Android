@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="1dp">
+        >
 
         <EditText
             android:id="@+id/messageEdit"
@@ -30,7 +30,6 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/button_border"
             android:text="@string/send"
-
             android:textColor="@color/background_material_light"/>
 
         <ListView
@@ -41,7 +40,6 @@
             android:layout_alignParentTop="false"
             android:layout_marginBottom="20dp"
             android:layout_above="@+id/messageEdit"
-            android:layout_marginTop="10dp"
             android:listSelector="@android:color/transparent"
             android:transcriptMode="alwaysScroll"
             android:divider="@null" />
