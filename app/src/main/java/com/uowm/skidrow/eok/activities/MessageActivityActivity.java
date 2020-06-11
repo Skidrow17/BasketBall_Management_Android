@@ -29,8 +29,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+
+import org.ocpsoft.prettytime.PrettyTime;
 
 public class MessageActivityActivity extends AppCompatActivity {
 
@@ -100,10 +107,22 @@ public class MessageActivityActivity extends AppCompatActivity {
                 }
                 new MessageSend().execute();
 
+
+                PrettyTime p = new PrettyTime();
+                p.setLocale(Locale.ENGLISH);
+
+                String date_time = (String) android.text.format.DateFormat.format("yyyy-MM-dd kk:mm:ss", new java.util.Date());
+                Date date = null;
+                try {
+                     date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(date_time);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
                 ChatMessage chatMessage = new ChatMessage();
                 chatMessage.setId(122);//dummy
                 chatMessage.setMessage(messageText);
-                chatMessage.setDate(DateFormat.getDateTimeInstance().format(new Date()));
+                chatMessage.setDate(p.format(date));
                 chatMessage.setMe(false);
                 displayMessage(chatMessage);
             }
@@ -214,14 +233,20 @@ public class MessageActivityActivity extends AppCompatActivity {
                         String text_message = obj.getString("text_message");
                         String date_time = obj.getString("date_time");
 
+                        PrettyTime p = new PrettyTime();
+                        p.setLocale(Locale.ENGLISH);
+                        Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(date_time);
+
                         ChatMessage msg = new ChatMessage();
                         msg.setId(id);
                         msg.setMe(Boolean.parseBoolean(set_me));
                         msg.setMessage(text_message);
-                        msg.setDate(date_time);
+                        msg.setDate(p.format(date));
                         chatHistory.add(msg);
                     }
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
                     e.printStackTrace();
                 }
 
