@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -66,11 +68,18 @@ public class MessageActivityActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.menu_load) {
+            new JSONParse().execute();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.chat_menu, menu);
+        return true;
     }
 
     private void initControls() {
