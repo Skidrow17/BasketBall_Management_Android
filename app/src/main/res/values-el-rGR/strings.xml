@@ -165,5 +165,15 @@
     <string name="home_fragment">Home Fragment</string>
     <string name="sport_fragment">Sport Fragment</string>
     <string name="movie_fragment">Movie Fragment</string>
+    <string name="send">Αποστολή</string>
+
+    <string name="years">χρόνια</string>
+    <string name="months">μήνες</string>
+    <string name="days">μέρες</string>
+    <string name="minutes">λεπτά</string>
+    <string name="hours">ώρες</string>
+    <string name="ago">πριν</string>
+    <string name="moments">δευτερόλεπτα</string>
+
 
 </resources>
