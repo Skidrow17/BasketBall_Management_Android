@@ -166,5 +166,12 @@ Under the jurisdiction of the Union are the teams belonging to the Prefectures o
     <string name="movie_fragment">Movie Fragment</string>
     <string name="send">Send</string>
 
+    <string name="years">years</string>
+    <string name="days">days</string>
+    <string name="minutes">minutes</string>
+    <string name="hours">hours</string>
+    <string name="ago">ago</string>
+    <string name="moments">moments</string>
+    <string name="months">months</string>
 
 </resources>

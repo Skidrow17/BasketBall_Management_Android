@@ -119,10 +119,19 @@ public class MessageActivityActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
+                String hourInGreek = p.format(date).replace("ago",getString(R.string.ago));
+                hourInGreek = hourInGreek.replace("years",getString(R.string.years));
+                hourInGreek = hourInGreek.replace("days",getString(R.string.days));
+                hourInGreek = hourInGreek.replace("minutes",getString(R.string.minutes));
+                hourInGreek = hourInGreek.replace("hours",getString(R.string.hours));
+                hourInGreek = hourInGreek.replace("moments",getString(R.string.moments));
+                hourInGreek = hourInGreek.replace("months",getString(R.string.months));
+
+
                 ChatMessage chatMessage = new ChatMessage();
-                chatMessage.setId(122);//dummy
+                chatMessage.setId(122);
                 chatMessage.setMessage(messageText);
-                chatMessage.setDate(p.format(date));
+                chatMessage.setDate(hourInGreek);
                 chatMessage.setMe(false);
                 displayMessage(chatMessage);
             }
@@ -237,11 +246,19 @@ public class MessageActivityActivity extends AppCompatActivity {
                         p.setLocale(Locale.ENGLISH);
                         Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(date_time);
 
+                        String hourInGreek = p.format(date).replace("ago",getString(R.string.ago));
+                        hourInGreek = hourInGreek.replace("years",getString(R.string.years));
+                        hourInGreek = hourInGreek.replace("days",getString(R.string.days));
+                        hourInGreek = hourInGreek.replace("minutes",getString(R.string.minutes));
+                        hourInGreek = hourInGreek.replace("hours",getString(R.string.hours));
+                        hourInGreek = hourInGreek.replace("moments",getString(R.string.moments));
+                        hourInGreek = hourInGreek.replace("months",getString(R.string.months));
+
                         ChatMessage msg = new ChatMessage();
                         msg.setId(id);
                         msg.setMe(Boolean.parseBoolean(set_me));
                         msg.setMessage(text_message);
-                        msg.setDate(p.format(date));
+                        msg.setDate(hourInGreek);
                         chatHistory.add(msg);
                     }
                 } catch (JSONException e) {
