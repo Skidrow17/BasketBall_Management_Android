@@ -168,10 +168,20 @@
     <string name="send">Αποστολή</string>
 
     <string name="years">χρόνια</string>
+    <string name="year">χρόνο</string>
+
     <string name="months">μήνες</string>
+    <string name="month">μήνα</string>
+
     <string name="days">μέρες</string>
+    <string name="day">μέρα</string>
+
     <string name="minutes">λεπτά</string>
+    <string name="minute">λεπτό</string>
+
     <string name="hours">ώρες</string>
+    <string name="hour">ώρα</string>
+
     <string name="ago">πριν</string>
     <string name="moments">δευτερόλεπτα</string>
 
