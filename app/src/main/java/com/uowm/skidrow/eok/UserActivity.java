@@ -47,7 +47,7 @@ public class UserActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.add_restriction,R.id.weekly_matches,R.id.rank,R.id.rules,R.id.clarification,R.id.about_ekasdym,
+                R.id.add_restriction,R.id.weekly_matches,R.id.rank,R.id.rules,R.id.clarification,R.id.about_ekasdym,R.id.chat_messages,
                 R.id.about_us,R.id.announcements,R.id.received_messages,R.id.sent_messages,R.id.my_restrictions,
                 R.id.make_announcement,R.id.my_matches,R.id.password_change,R.id.image_change)
                 .setDrawerLayout(drawer)

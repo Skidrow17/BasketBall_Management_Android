@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:cacheColorHint="#00000000"
+    android:orientation="horizontal"
+
+    android:padding="5dip"
+    tools:layout_editor_absoluteY="25dp">
+
+    <!--  ListRow Left sied Thumbnail image -->
+    <LinearLayout
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="5dp"
+        android:padding="3dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/password"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/image_sender"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:background="#000000"
+            android:padding="1dp" />
+
+    </LinearLayout>
+
+    <!-- Title Of Song-->
+    <TextView
+        android:id="@+id/sender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:text="Sender"
+        android:textColor="#040404"
+        android:textSize="@dimen/text_list_size"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toTopOf="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail" />
+
+    <!-- Artist Name -->
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:maxLength="10"
+        android:text="message"
+        android:textColor="#343434"
+        android:textSize="10dip"
+        app:layout_constraintBottom_toBottomOf="@+id/message_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/thumbnail"
+        app:layout_constraintTop_toBottomOf="@+id/sender"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_alignRight="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/datetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="10dip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/message_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="11dp"
+        android:text="TextView"
+        android:textSize="10dip"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/thumbnail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datetime"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Rightend Duration -->
+
+    <!-- Rightend Arrow -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,6 +39,10 @@
             android:icon="@drawable/send"
             android:title="@string/outgoing" />
         <item
+            android:id="@+id/chat_messages"
+            android:icon="@drawable/chat_icon"
+            android:title="@string/chat" />
+        <item
             android:id="@+id/rank"
             android:icon="@drawable/rank"
             android:title="@string/ranking" />

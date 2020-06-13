@@ -185,4 +185,6 @@ Under the jurisdiction of the Union are the teams belonging to the Prefectures o
     <string name="ago">ago</string>
     <string name="moments">moments</string>
 
+    <string name = "chat">Chats</string>
+
 </resources>

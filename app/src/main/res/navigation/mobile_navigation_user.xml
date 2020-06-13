@@ -102,4 +102,10 @@
         android:label="@string/image_upload"
         tools:layout="@layout/image_upload" />
 
+    <fragment
+        android:id="@+id/chat_messages"
+        android:name="com.uowm.skidrow.eok.fragments.ChatsInProgressFragment"
+        android:label="@string/chat"
+        tools:layout="@layout/chats_in_progress" />
+
 </navigation>

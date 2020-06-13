@@ -33,6 +33,17 @@ public class Message {
         this.message_status = message_status;
     }
 
+
+    public Message(int id,String name,String surname,String message, String profile_pic,String dateTime) {
+        this.sender_id = id;
+        this.profile_pic = profile_pic;
+        this.name = name;
+        this.message = message;
+        this.surname = surname;
+        this.dateTime = dateTime;
+    }
+
+
     public String getName()
     {
         return name;

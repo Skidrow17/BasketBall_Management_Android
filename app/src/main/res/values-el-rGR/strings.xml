@@ -185,5 +185,6 @@
     <string name="ago">πριν</string>
     <string name="moments">δευτερόλεπτα</string>
 
+    <string name = "chat">Συζητήσεις</string>
 
 </resources>
