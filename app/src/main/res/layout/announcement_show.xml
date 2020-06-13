@@ -19,6 +19,8 @@
         android:lines="8"
         android:maxLines="10"
         android:minLines="6"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:padding="10dp"
         android:textAlignment="center"
         android:textColor="@color/white" />
