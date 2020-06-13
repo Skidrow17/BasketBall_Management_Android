@@ -89,5 +89,10 @@
         android:name="com.uowm.skidrow.eok.activities.Administration"
         android:label="@string/administration"
         tools:layout="@layout/webview" />
+    <fragment
+        android:id="@+id/chat_messages"
+        android:name="com.uowm.skidrow.eok.fragments.ChatsInProgressFragment"
+        android:label="@string/chat"
+        tools:layout="@layout/chats_in_progress" />
 
 </navigation>

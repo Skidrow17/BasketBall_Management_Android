@@ -22,7 +22,13 @@ import com.uowm.skidrow.eok.utilities.JSONParser;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.ocpsoft.prettytime.PrettyTime;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class MessageHistoryFragment extends ListFragment {
 
@@ -91,17 +97,10 @@ public class MessageHistoryFragment extends ListFragment {
 
 
     public class JSONParse extends AsyncTask<String, String, String> {
-        private ProgressDialog pDialog;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(getActivity());
-            pDialog.setMessage(getString(R.string.waiting_screen));
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
-            pDialog.show();
-
         }
 
         @Override
@@ -132,13 +131,6 @@ public class MessageHistoryFragment extends ListFragment {
         protected void onPostExecute(String json) {
 
             chatHistory.clear();
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    pDialog.dismiss();
-                }
-            }, 500);
 
             int error_code=0;
             JSONObject jobj = null;
@@ -164,14 +156,34 @@ public class MessageHistoryFragment extends ListFragment {
                         String text_message = obj.getString("text_message");
                         String date_time = obj.getString("date_time");
 
+                        PrettyTime p = new PrettyTime();
+                        p.setLocale(Locale.ENGLISH);
+                        Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(date_time);
+
+                        String hourInGreek = p.format(date).replace("ago",getString(R.string.ago));
+                        hourInGreek = hourInGreek.replace("years",getString(R.string.years));
+                        hourInGreek = hourInGreek.replace("days",getString(R.string.days));
+                        hourInGreek = hourInGreek.replace("minutes",getString(R.string.minutes));
+                        hourInGreek = hourInGreek.replace("hours",getString(R.string.hours));
+                        hourInGreek = hourInGreek.replace("moments",getString(R.string.moments));
+                        hourInGreek = hourInGreek.replace("months",getString(R.string.months));
+
+                        hourInGreek = hourInGreek.replace("hour",getString(R.string.hour));
+                        hourInGreek = hourInGreek.replace("month",getString(R.string.month));
+                        hourInGreek = hourInGreek.replace("minute",getString(R.string.minute));
+                        hourInGreek = hourInGreek.replace("year",getString(R.string.year));
+                        hourInGreek = hourInGreek.replace("day",getString(R.string.day));
+
                         ChatMessage msg = new ChatMessage();
                         msg.setId(id);
                         msg.setMe(Boolean.parseBoolean(set_me));
                         msg.setMessage(text_message);
-                        msg.setDate(date_time);
+                        msg.setDate(hourInGreek);
                         chatHistory.add(msg);
                     }
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
                     e.printStackTrace();
                 }
 

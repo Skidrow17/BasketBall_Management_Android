@@ -10,7 +10,8 @@ android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-         android:paddingBottom="30dp">
+         android:padding="10dp"
+         >
 
         <ListView
             android:id="@android:id/list"
@@ -19,8 +20,10 @@ android:orientation="vertical"
             android:layout_alignParentLeft="false"
             android:layout_alignParentTop="false"
             android:layout_marginBottom="20dp"
+            android:overScrollMode="never"
             android:divider="@null"
             android:listSelector="@android:color/transparent"
-            android:transcriptMode="alwaysScroll" />
+            android:transcriptMode="alwaysScroll"
+            android:paddingBottom="30dp" />
     </RelativeLayout>
 </LinearLayout>
