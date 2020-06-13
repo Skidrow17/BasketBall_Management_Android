@@ -167,12 +167,13 @@ public class MessageHistoryFragment extends ListFragment {
                         hourInGreek = hourInGreek.replace("hours",getString(R.string.hours));
                         hourInGreek = hourInGreek.replace("moments",getString(R.string.moments));
                         hourInGreek = hourInGreek.replace("months",getString(R.string.months));
-
+                        hourInGreek = hourInGreek.replace("weeks",getString(R.string.weeks));
                         hourInGreek = hourInGreek.replace("hour",getString(R.string.hour));
                         hourInGreek = hourInGreek.replace("month",getString(R.string.month));
                         hourInGreek = hourInGreek.replace("minute",getString(R.string.minute));
                         hourInGreek = hourInGreek.replace("year",getString(R.string.year));
                         hourInGreek = hourInGreek.replace("day",getString(R.string.day));
+                        hourInGreek = hourInGreek.replace("week",getString(R.string.week));
 
                         ChatMessage msg = new ChatMessage();
                         msg.setId(id);

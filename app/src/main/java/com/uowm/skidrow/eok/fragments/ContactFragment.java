@@ -29,7 +29,13 @@ import com.uowm.skidrow.eok.utilities.JSONParser;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.ocpsoft.prettytime.PrettyTime;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class ContactFragment extends ListFragment {
 
@@ -154,11 +160,36 @@ public class ContactFragment extends ListFragment {
                         String last_login = obj.getString("last_login");
                         String profile = obj.getString("profession");
 
-                        Contact referee = new Contact(id, fname, surname, getString(R.string.image_server) + profile_pic, phone_number, last_login,profile);
+                        PrettyTime p = new PrettyTime();
+                        String hourInGreek;
+                        p.setLocale(Locale.ENGLISH);
+                        if(!isNullOrEmpty(last_login)) {
+                            Date date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(last_login);
+                            hourInGreek = p.format(date).replace("ago", getString(R.string.ago));
+                            hourInGreek = hourInGreek.replace("years",getString(R.string.years));
+                            hourInGreek = hourInGreek.replace("days",getString(R.string.days));
+                            hourInGreek = hourInGreek.replace("minutes",getString(R.string.minutes));
+                            hourInGreek = hourInGreek.replace("hours",getString(R.string.hours));
+                            hourInGreek = hourInGreek.replace("moments",getString(R.string.moments));
+                            hourInGreek = hourInGreek.replace("months",getString(R.string.months));
+                            hourInGreek = hourInGreek.replace("weeks",getString(R.string.weeks));
+                            hourInGreek = hourInGreek.replace("hour",getString(R.string.hour));
+                            hourInGreek = hourInGreek.replace("month",getString(R.string.month));
+                            hourInGreek = hourInGreek.replace("minute",getString(R.string.minute));
+                            hourInGreek = hourInGreek.replace("year",getString(R.string.year));
+                            hourInGreek = hourInGreek.replace("day",getString(R.string.day));
+                            hourInGreek = hourInGreek.replace("week",getString(R.string.week));
+
+                        }else{
+                            hourInGreek = "null";
+                        }
+                        Contact referee = new Contact(id, fname, surname, getString(R.string.image_server) + profile_pic, phone_number, hourInGreek, profile);
                         contacts.add(referee);
                     }
 
                 } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (ParseException e) {
                     e.printStackTrace();
                 }
 
@@ -180,5 +211,11 @@ public class ContactFragment extends ListFragment {
 
             }
         }
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.isEmpty() && !str.equals("null"))
+            return false;
+        return true;
     }
 }

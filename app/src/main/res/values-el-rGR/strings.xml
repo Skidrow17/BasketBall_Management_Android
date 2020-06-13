@@ -182,6 +182,9 @@
     <string name="hours">ώρες</string>
     <string name="hour">ώρα</string>
 
+    <string name="week">εβδομάδα</string>
+    <string name="weeks">εβδομάδες</string>
+
     <string name="ago">πριν</string>
     <string name="moments">δευτερόλεπτα</string>
 
