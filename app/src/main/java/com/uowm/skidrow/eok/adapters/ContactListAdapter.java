@@ -143,7 +143,9 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
                     {
                         // name match condition. this might differ depending on your requirement
                         // here we are looking for name
-                        if (contact.name.toLowerCase().contains(charString.toLowerCase()) )
+                        String nameSurname = contact.name.toLowerCase() + " "+contact.surname.toLowerCase();
+                        String reversedNameSurname = contact.surname.toLowerCase() + " "+contact.name.toLowerCase();
+                        if (nameSurname.toLowerCase().contains(charString.toLowerCase()) || reversedNameSurname.toLowerCase().contains(charString.toLowerCase()))
                         {
                             filteredList.add(contact);
                         }
