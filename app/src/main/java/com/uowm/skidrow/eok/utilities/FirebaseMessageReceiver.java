@@ -45,6 +45,7 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
 
 
     public void showNotification(String title,String message){
+        String[] splitInTwo = title.split("/");
         Intent intent=new Intent(this, MainActivity.class);
         String channel_id="web_app_channel";
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -60,7 +61,7 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
                 .setOnlyAlertOnce(true)
                 .setContentIntent(pendingIntent);
 
-        builder = builder.setContentTitle(title)
+        builder = builder.setContentTitle(splitInTwo[0])
                         .setContentText(message);
 
 
@@ -71,7 +72,7 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
             notificationManager.createNotificationChannel(notificationChannel);
         }
 
-        notificationManager.notify(0,builder.build());
+        notificationManager.notify(Integer.parseInt(splitInTwo[1]),builder.build());
     }
 
     //app part ready now let see how to send differnet users
