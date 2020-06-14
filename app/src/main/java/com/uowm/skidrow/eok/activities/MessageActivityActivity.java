@@ -434,7 +434,7 @@ public class MessageActivityActivity extends AppCompatActivity {
         chatMessage.setMessage(event.getMessage());
         chatMessage.setDate(hourInGreek);
         chatMessage.setMe(true);
-        if(name_surname.equals(event.getUser())) {
+        if(name_surname.equals(event.getUser().split("/")[0])) {
             displayMessage(chatMessage);
         }
     }
