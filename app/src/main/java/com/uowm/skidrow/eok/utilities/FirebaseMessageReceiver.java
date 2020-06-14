@@ -10,25 +10,35 @@ import android.net.Uri;
 import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.uowm.skidrow.eok.MainActivity;
 import com.uowm.skidrow.eok.R;
+import com.uowm.skidrow.eok.events.MessageEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 
 public class FirebaseMessageReceiver extends FirebaseMessagingService {
 
+    private LocalBroadcastManager broadcaster;
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+
+
         //handle when receive notification via data event
         if(remoteMessage.getData().size()>0){
             showNotification(remoteMessage.getData().get("title"),remoteMessage.getData().get("message"));
+            EventBus.getDefault().post(new MessageEvent(remoteMessage.getData().get("title"),remoteMessage.getData().get("message")));
         }
 
         //handle when receive notification
         if(remoteMessage.getNotification()!=null){
             showNotification(remoteMessage.getNotification().getTitle(),remoteMessage.getNotification().getBody());
+            EventBus.getDefault().post(new MessageEvent(remoteMessage.getNotification().getTitle(),remoteMessage.getNotification().getBody()));
         }
 
     }

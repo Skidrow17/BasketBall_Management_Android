@@ -32,6 +32,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.4.Final'
+    implementation 'org.greenrobot:eventbus:3.2.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.applandeo:material-calendar-view:1.7.0'
     implementation 'com.github.barteksc:android-pdf-viewer:2.3.0'
