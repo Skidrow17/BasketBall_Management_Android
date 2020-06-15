@@ -57,8 +57,8 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
                 .setSmallIcon(R.drawable.eiko)
                 .setSound(uri)
                 .setAutoCancel(true)
-                .setVibrate(new long[]{1000,1000,1000,1000,1000})
-                .setOnlyAlertOnce(true)
+                .setVibrate(new long[]{1000,1000})
+                .setOnlyAlertOnce(false)
                 .setContentIntent(pendingIntent);
 
         builder = builder.setContentTitle(splitInTwo[0])
