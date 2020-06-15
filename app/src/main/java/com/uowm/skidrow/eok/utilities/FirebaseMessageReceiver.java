@@ -16,6 +16,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.uowm.skidrow.eok.MainActivity;
 import com.uowm.skidrow.eok.R;
+import com.uowm.skidrow.eok.activities.MessageActivityActivity;
 import com.uowm.skidrow.eok.events.MessageEvent;
 
 import org.greenrobot.eventbus.EventBus;
@@ -46,7 +47,14 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
 
     public void showNotification(String title,String message){
         String[] splitInTwo = title.split("/");
-        Intent intent=new Intent(this, MainActivity.class);
+        Intent intent;
+        if(splitInTwo[1].equals("0")) {
+            intent = new Intent(this, MainActivity.class);
+        }else{
+            intent = new Intent(this, MessageActivityActivity.class);
+            intent.putExtra("id", Integer.parseInt(splitInTwo[1]));
+            intent.putExtra("name_surname", splitInTwo[0]);
+        }
         String channel_id="web_app_channel";
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         System.out.println(title);
