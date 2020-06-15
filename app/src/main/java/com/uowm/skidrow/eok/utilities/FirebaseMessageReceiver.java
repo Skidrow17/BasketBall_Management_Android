@@ -33,13 +33,13 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
         //handle when receive notification via data event
         if(remoteMessage.getData().size()>0){
             showNotification(remoteMessage.getData().get("title"),remoteMessage.getData().get("message"));
-            EventBus.getDefault().post(new MessageEvent(remoteMessage.getData().get("title"),remoteMessage.getData().get("message")));
+            EventBus.getDefault().postSticky(new MessageEvent(remoteMessage.getData().get("title"),remoteMessage.getData().get("message")));
         }
 
         //handle when receive notification
         if(remoteMessage.getNotification()!=null){
             showNotification(remoteMessage.getNotification().getTitle(),remoteMessage.getNotification().getBody());
-            EventBus.getDefault().post(new MessageEvent(remoteMessage.getNotification().getTitle(),remoteMessage.getNotification().getBody()));
+            EventBus.getDefault().postSticky(new MessageEvent(remoteMessage.getNotification().getTitle(),remoteMessage.getNotification().getBody()));
         }
 
     }
