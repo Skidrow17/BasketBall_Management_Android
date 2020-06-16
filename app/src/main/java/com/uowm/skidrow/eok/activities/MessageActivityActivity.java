@@ -400,7 +400,7 @@ public class MessageActivityActivity extends AppCompatActivity {
         super.onStop();
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
     public void onMessageEvent(MessageEvent event) {
         PrettyTime p = new PrettyTime();
         p.setLocale(Locale.ENGLISH);
