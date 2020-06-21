@@ -438,4 +438,10 @@ public class MessageActivityActivity extends AppCompatActivity {
             displayMessage(chatMessage);
         }
     }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        new JSONParse().execute();
+    }
 }
