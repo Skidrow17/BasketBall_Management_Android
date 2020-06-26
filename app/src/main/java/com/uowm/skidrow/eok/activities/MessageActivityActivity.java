@@ -371,8 +371,8 @@ public class MessageActivityActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (error_code == 200) {
-                Toast toast = Toast.makeText(MessageActivityActivity.this, getString(R.string.error_code_200), Toast.LENGTH_LONG);
-                toast.show();
+               // Toast toast = Toast.makeText(MessageActivityActivity.this, getString(R.string.error_code_200), Toast.LENGTH_LONG);
+               // toast.show();
             } else if (error_code == 403) {
                 Toast toast = Toast.makeText(MessageActivityActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
                 toast.show();
