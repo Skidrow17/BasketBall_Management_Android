@@ -81,7 +81,7 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
         NotificationCompat.Builder builder=new NotificationCompat.Builder(getApplicationContext(),channel_id)
                 .setSmallIcon(R.drawable.eiko)
                 .setSound(uri)
-                .setAutoCancel(false)
+                .setAutoCancel(true)
                 .setVibrate(new long[]{1000,1000})
                 .setOnlyAlertOnce(setOnlyAlertOnce)
                 .setContentIntent(pendingIntent);
