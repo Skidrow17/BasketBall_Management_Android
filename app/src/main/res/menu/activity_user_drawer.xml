@@ -31,14 +31,6 @@
             android:icon="@drawable/announce"
             android:title="@string/new_announcement" />
         <item
-            android:id="@+id/received_messages"
-            android:icon="@drawable/inb"
-            android:title="@string/incoming" />
-        <item
-            android:id="@+id/sent_messages"
-            android:icon="@drawable/send"
-            android:title="@string/outgoing" />
-        <item
             android:id="@+id/chat_messages"
             android:icon="@drawable/chat_icon"
             android:title="@string/chat" />

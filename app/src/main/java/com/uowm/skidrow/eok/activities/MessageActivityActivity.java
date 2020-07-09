@@ -2,7 +2,10 @@ package com.uowm.skidrow.eok.activities;
 
 
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -20,11 +23,18 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import com.uowm.skidrow.eok.R;
 import com.uowm.skidrow.eok.adapters.MessageAdapter;
 import com.uowm.skidrow.eok.database.DatabaseHelper;
+import com.uowm.skidrow.eok.events.MessageEvent;
 import com.uowm.skidrow.eok.model.ChatMessage;
 import com.uowm.skidrow.eok.utilities.JSONParser;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,6 +57,7 @@ public class MessageActivityActivity extends AppCompatActivity {
     private MessageAdapter adapter;
     private ArrayList<ChatMessage> chatHistory = new ArrayList<ChatMessage>();
     private int buddy;
+    private String name_surname;
     private static final String MESSAGE = "chat_message";
     private String url = "";
     public String messageText = "";
@@ -57,7 +68,7 @@ public class MessageActivityActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat_on_activity);
         Intent intent = getIntent();
         buddy = intent.getIntExtra("id", 0);
-        String name_surname = intent.getStringExtra("name_surname");
+        name_surname = intent.getStringExtra("name_surname");
         new JSONParse().execute();
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -360,8 +371,8 @@ public class MessageActivityActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (error_code == 200) {
-                Toast toast = Toast.makeText(MessageActivityActivity.this, getString(R.string.error_code_200), Toast.LENGTH_LONG);
-                toast.show();
+               // Toast toast = Toast.makeText(MessageActivityActivity.this, getString(R.string.error_code_200), Toast.LENGTH_LONG);
+               // toast.show();
             } else if (error_code == 403) {
                 Toast toast = Toast.makeText(MessageActivityActivity.this, getString(R.string.error_code_403), Toast.LENGTH_LONG);
                 toast.show();
@@ -375,5 +386,62 @@ public class MessageActivityActivity extends AppCompatActivity {
                 MessageActivityActivity.this.finishAffinity();
             }
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        EventBus.getDefault().unregister(this);
+        super.onStop();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(MessageEvent event) {
+        PrettyTime p = new PrettyTime();
+        p.setLocale(Locale.ENGLISH);
+
+        String date_time = (String) android.text.format.DateFormat.format("yyyy-MM-dd kk:mm:ss", new java.util.Date());
+        Date date = null;
+
+        try {
+            date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(date_time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        String hourInGreek = p.format(date).replace("ago",getString(R.string.ago));
+        hourInGreek = hourInGreek.replace("years",getString(R.string.years));
+        hourInGreek = hourInGreek.replace("days",getString(R.string.days));
+        hourInGreek = hourInGreek.replace("minutes",getString(R.string.minutes));
+        hourInGreek = hourInGreek.replace("hours",getString(R.string.hours));
+        hourInGreek = hourInGreek.replace("moments",getString(R.string.moments));
+        hourInGreek = hourInGreek.replace("months",getString(R.string.months));
+        hourInGreek = hourInGreek.replace("weeks",getString(R.string.weeks));
+        hourInGreek = hourInGreek.replace("hour",getString(R.string.hour));
+        hourInGreek = hourInGreek.replace("month",getString(R.string.month));
+        hourInGreek = hourInGreek.replace("minute",getString(R.string.minute));
+        hourInGreek = hourInGreek.replace("year",getString(R.string.year));
+        hourInGreek = hourInGreek.replace("day",getString(R.string.day));
+        hourInGreek = hourInGreek.replace("week",getString(R.string.week));
+
+        ChatMessage chatMessage = new ChatMessage();
+        chatMessage.setId(122);
+        chatMessage.setMessage(event.getMessage());
+        chatMessage.setDate(hourInGreek);
+        chatMessage.setMe(true);
+        if(name_surname.equals(event.getUser().split("/")[0])) {
+            displayMessage(chatMessage);
+        }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        new JSONParse().execute();
     }
 }
